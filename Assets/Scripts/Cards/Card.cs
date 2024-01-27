@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Card : MonoBehaviour
 {
     protected bool isUsed; // bool for checking whether the cards been used this round
+    public Sprite cardSpriteForVisual;
+    public string cardNameForVisual;
+
     // protected Image cardImage; // image for the card (forgot how images work in unity so i've commented it out for now)
 
     // Start is called before the first frame update
