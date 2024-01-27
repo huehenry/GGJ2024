@@ -1,0 +1,3 @@
+Backgrounds will be Unity Scenes that we load additively. 
+This means they need to stay out of our "character space"
+Once we know where the characters will stand, we will define that space here and make sure we don't put any background elements there. 
