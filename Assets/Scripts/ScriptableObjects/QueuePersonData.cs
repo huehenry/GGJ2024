@@ -7,17 +7,15 @@ using UnityEngine;
 [System.Serializable]
 public class QueuePersonData : ScriptableObject
 {
-    public enum HeightType { TALL, NORM, SHORT };
-
-    [HideInInspector] public float UID;
     public bool isPlayer = false;
     public HeightType height = HeightType.TALL;
-    public Material shirtMaterial;
-    public Material pantMaterial;
+    public ShirtType shirt;
+    public PantsType pants;
+    // TODO: Variations? 
 
-    public void Start()
-    {
-        // Give them a random ID
-        UID = DateTime.Now.Ticks;
-    }
 }
+
+public enum HeightType { TALL, NORM, SMALL };
+public enum ShirtType { RED, GREEN, BLUE };
+public enum PantsType { JEANS, SHORTS, LEATHER, NONE };
+
