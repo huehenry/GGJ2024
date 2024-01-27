@@ -6,11 +6,12 @@ public class ChooseNextIdle : StateMachineBehaviour
 {
 
     // Note - these are the cutoff values
-    private float cutoffChanceOfCoreIdle = 0.65f;
-    private float cutoffChanceOfAltIdle1 = 0.70f;
-    private float cutoffChanceOfAltIdle2 = 0.80f;
-    private float cutoffChanceOfAltIdle3 = 0.90f;
-    private float cutoffChanceOfAltIdle4 = 1.00f;
+    private float cutoffChanceOfCoreIdle = 0.40f;
+    private float cutoffChanceOfAltIdle1 = 0.50f;
+    private float cutoffChanceOfAltIdle2 = 0.65f;
+    private float cutoffChanceOfAltIdle3 = 0.75f;
+    private float cutoffChanceOfAltIdle4 = 0.80f;
+    
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -36,6 +37,9 @@ public class ChooseNextIdle : StateMachineBehaviour
         else if (Random.value < cutoffChanceOfAltIdle4)
         {
             animator.SetInteger("NextIdle", 4);
+        } else
+        {
+            animator.SetInteger("NextIdle", 5);
         }
 
         animator.speed = 1.0f + (Random.Range(-0.15f, 0.25f));
