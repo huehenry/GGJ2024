@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    [Header("GameData")]
+    public List<QueuePerson> persons;
+    public List<Transform> PeopleSpawnPoints;
+    public Transform offscreenSpawnPoint;
+
+    [Header("Prefabs")]
+    public GameObject pfUI;
+    public GameObject pfPerson;
+
+    [Header("Sounds")]
+    public AudioClip scream;
 
     private void Awake()
     {
@@ -24,11 +35,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        persons = new List<QueuePerson>();
     }
 
     // Update is called once per frame
     void Update()
     {
     }
+
+    // Remove a person -- 
+    // For now, this "poofs" them out of existance and they come in at the end of the line.
+
+
 }

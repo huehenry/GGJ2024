@@ -1,19 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class QueuePerson : MonoBehaviour
 {
     private float yOffsetBasedOnSizeTall = 0.25f;
     private float yOffsetBasedOnSizeNorm = 0.5f;
-    private float yOffsetBasedOnSizeSmall = 0.85f;
+    private float yOffsetBasedOnSizeSmall = 0.80f;
     private float yScaleBasedOnSizeSmall = 0.85f;
     private float yScaleBasedOnSizeNorm = 1.0f;
     private float yScaleBasedOnSizeTall = 1.15f;
 
 
-    public float UID;
+    public string UID;
     public bool isPlayer;
     public HeightType height;
     public ShirtType shirt;
@@ -28,13 +29,12 @@ public class QueuePerson : MonoBehaviour
     {
         // Get the renderer
         _skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-
     }
 
     void Start()
     {
         // Give them a random ID
-        UID = Time.time;
+        UID = System.Guid.NewGuid().ToString();
     }
 
     public void LoadFromScriptableObject ( QueuePersonData data, bool isPlayer = false )

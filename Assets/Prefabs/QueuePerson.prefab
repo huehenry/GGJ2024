@@ -81,12 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3c02c793092440843a7ddb8daa109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffsetBasedOnSizeTall: 0.25
-  yOffsetBasedOnSizeNorm: 0.5
-  yOffsetBasedOnSizeSmall: 0.85
-  yScaleBasedOnSizeSmall: 0.85
-  yScaleBasedOnSizeNorm: 1
-  yScaleBasedOnSizeTall: 1.15
   UID: 0
   isPlayer: 0
   height: 0

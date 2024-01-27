@@ -13,9 +13,21 @@ MonoBehaviour:
   m_Name: SampleLevel
   m_EditorClassIdentifier: 
   queue:
+  - {fileID: 11400000, guid: b005cd6daa85db44db323d3f9c24e39d, type: 2}
   - {fileID: 11400000, guid: 71050aa9384e5aa489e1cde279f04584, type: 2}
   - {fileID: 11400000, guid: 71050aa9384e5aa489e1cde279f04584, type: 2}
   - {fileID: 11400000, guid: 71050aa9384e5aa489e1cde279f04584, type: 2}
-  - {fileID: 11400000, guid: 71050aa9384e5aa489e1cde279f04584, type: 2}
-  - {fileID: 11400000, guid: 71050aa9384e5aa489e1cde279f04584, type: 2}
-  backgroundSceneFilename: 
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 0a9dd57842f03284d91aad84f91e4d7a, type: 2}
+  CardList:
+  - {fileID: 6211393161841552464, guid: 6c3112bc83659334b8e52f6654b0ea57, type: 3}
+  - {fileID: 2020590533932055646, guid: d7305ae9a32a07b4297a518e04806434, type: 3}
+  - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
+  - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
+  - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
+  - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
+  backgroundSceneFilename: SampleBackground
