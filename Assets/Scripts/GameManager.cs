@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     [Header("GameData")]
-    public List<QueuePerson> persons;
-    public List<Transform> PeopleSpawnPoints;
+    public QueueManager queueManager;
     public Transform offscreenSpawnPoint;
 
     [Header("Prefabs")]
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        persons = new List<QueuePerson>();
     }
 
     // Update is called once per frame

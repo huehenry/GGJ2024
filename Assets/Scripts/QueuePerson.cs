@@ -23,6 +23,10 @@ public class QueuePerson : MonoBehaviour
 
     private SkinnedMeshRenderer _skinnedMeshRenderer;
 
+    public Vector3 currentTargetPos;
+    public float moveSpeed;
+    public bool move;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -110,7 +114,17 @@ public class QueuePerson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(move == true)
+		{
+            if (this.transform.position != currentTargetPos)
+            {
+                this.transform.position = Vector3.MoveTowards(this.transform.position, currentTargetPos, moveSpeed * Time.deltaTime);
+			}
+			else
+			{
+                move = false;
+			}
+		}
     }
        
 }

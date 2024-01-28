@@ -55,6 +55,9 @@ public class GameLoader : MonoBehaviour
         UI_CardInventory._cardInventory.NewLevel(levelData.CardList.ToArray());
 
         // Now, make all the people
+        //JEREMY: Gonna do this with a list
+        List<QueuePerson> personList = new List<QueuePerson>();
+
         if (GameManager.instance == null)
         {
             Debug.LogError("ERROR: NO GAME MANAGER LOADED");
@@ -65,19 +68,22 @@ public class GameLoader : MonoBehaviour
             for (int i = 0; i < levelData.queue.Count; i++)
             {
                 GameObject tempPerson = Instantiate<GameObject>(GameManager.instance.pfPerson,
-                                                                GameManager.instance.PeopleSpawnPoints[i].position,
-                                                                GameManager.instance.PeopleSpawnPoints[i].rotation);
+                                                                new Vector3(-20,0,0),
+                                                                Quaternion.Euler(0,90,0));
 
                 // Set the data for that person
                 QueuePerson queuePerson = tempPerson.GetComponent<QueuePerson>();
                 queuePerson.LoadFromScriptableObject(levelData.queue[i]);
 
                 // Save them in the game manager
-                GameManager.instance.persons.Add(queuePerson);
+                //GameManager.instance.persons.Add(queuePerson);
+                //INSTEAD OF DOING THIS WE'RE ADDING THEM TO OUR LIST
+                personList.Add(queuePerson);
 
                 // TODO: Create a number for them on the screen
 
             }
+            GameManager.instance.queueManager.LoadNewQueue(personList);
         }
         yield return null;
     }
