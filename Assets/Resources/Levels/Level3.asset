@@ -24,4 +24,4 @@ MonoBehaviour:
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
-  backgroundSceneFilename: SampleBackground
+  backgroundSceneFilename: LevelBrownWallOffice
