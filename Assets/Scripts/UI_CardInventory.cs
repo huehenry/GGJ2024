@@ -55,7 +55,8 @@ public class UI_CardInventory : MonoBehaviour
         bringBackCards,
         readyToPlayACard,
         waitingForCardToResolve,
-        moveCardOffScreen
+        moveCardOffScreen,
+        fizzleCard
 	}
 
     void Awake()
@@ -103,7 +104,7 @@ public class UI_CardInventory : MonoBehaviour
 	{
         //This does the same thing as a new level but does not replace the current card inventory
         animationLerper = 0;
-        cardInventoryStates = states.oldLevelReset;
+        GameLoader.instance.LoadLevel(GameLoader.instance.currentLevel);
 	}
 
     // Update is called once per frame
@@ -243,9 +244,20 @@ public class UI_CardInventory : MonoBehaviour
                     animationLerper = 0;
                     cardInventoryStates = states.readyToPlayACard;
                     thisCardWasPlayed = -1;
+                    //CHECK FOR WIN HERE.
+                    if(GameManager.instance.queueManager.checkForWin() == true)
+					{
+                        CutsceneManager._cutsceneManager.PlayCutsceneThenLoadLevel(GameLoader.instance.currentLevel.nextCutscene);
+                    }
                 }
                 break;
-
+            case states.fizzleCard:
+                cardSprites[thisCardWasPlayed].transform.localScale = Vector3.MoveTowards(cardSprites[thisCardWasPlayed].transform.localScale, Vector3.zero, Time.deltaTime);
+                if(cardSprites[thisCardWasPlayed].transform.localScale == Vector3.zero)
+				{
+                    cardInventoryStates = states.moveCardOffScreen;
+				}
+                break;
 
 		}
     }
@@ -263,8 +275,8 @@ public class UI_CardInventory : MonoBehaviour
     public void ClickedACard(int cardNum)
 	{
         //Do the effect of the card.
-        currentLevelCardInventory[cardNum].CallEffect();
         cardInventoryStates = states.waitingForCardToResolve;
+        currentLevelCardInventory[cardNum].CallEffect();
         thisCardWasPlayed = cardNum;
         cardPlayedPos = buttonObjects[cardNum].anchoredPosition;
 

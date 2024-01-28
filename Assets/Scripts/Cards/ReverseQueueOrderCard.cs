@@ -24,7 +24,7 @@ public class ReverseQueueOrderCard : Card
     {
         removeThese = new List<QueuePerson>();
         // remove all people in queue
-        for (int i = GameManager.instance.queueManager.currentQueue.Count; i > 0; i--)
+        for (int i = GameManager.instance.queueManager.currentQueue.Count-1; i >= 0; i--)
         {
             if (GameManager.instance.queueManager.currentQueue[i] != null)
             {

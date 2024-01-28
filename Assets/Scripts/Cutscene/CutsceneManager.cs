@@ -15,8 +15,10 @@ public class CutsceneManager : MonoBehaviour
         if (_cutsceneManager == null)
         {
             _cutsceneManager = this;
+            image.enabled = false;
         } else
         {
+            Debug.Log("two cutscene managers");
             Destroy(gameObject);
         }
     }

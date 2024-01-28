@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queue:
   - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
+  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
   - {fileID: 11400000, guid: 0c745564e22868749a06fd9a2f77f6af, type: 2}
   - {fileID: 11400000, guid: c2544f0081498e04fba68575369c4dc7, type: 2}
   - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
   CardList:
-  - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
+  - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: -6695932560272133924, guid: bc82d7c18164339449afe7219dfe015f, type: 3}
   - {fileID: 6544226127247794430, guid: 89b127f2619737c4d87a2f060e4661ff, type: 3}
   backgroundSceneFilename: LevelWaitingRoom
-  trapdoors: 00000000
+  trapdoors: 0000000000
+  nextCutscene: {fileID: 11400000, guid: 745255cdf45ca1a4f9bb09c0806b4f97, type: 2}

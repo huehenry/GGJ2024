@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
   - {fileID: 8062952275021569664, guid: 299d9d902a5220d44b8318610619fe73, type: 3}
-  - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   backgroundSceneFilename: LevelGreyWallOfficeAlt
-  trapdoors: 0000000000000000
+  trapdoors: 0000000100000101
+  nextCutscene: {fileID: 11400000, guid: 445f3744a8646234a851d379a537d335, type: 2}

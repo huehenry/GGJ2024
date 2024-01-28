@@ -57,6 +57,8 @@ public class QueueManager : MonoBehaviour
         {
             currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
         }
+        timer = 0;
+        stagger = 0;
         currentState = actionStates.spawning;
         //Also add trapdoors
         //Delete old trapdoors if they exist
@@ -195,7 +197,15 @@ public class QueueManager : MonoBehaviour
         swap2.move = true;
         swap1.moveSpeed = swapSpeed;
         swap2.moveSpeed = swapSpeed;
+        currentQueue[index1] = swap2;
+        currentQueue[index2] = swap1;
         currentState = actionStates.swapping;
+    }
+
+    public void Fizzle()
+	{
+        //Do nothing. Just resolve?
+        UI_CardInventory._cardInventory.cardInventoryStates = UI_CardInventory.states.fizzleCard;
     }
 
     //USE THIS FOR A CARD

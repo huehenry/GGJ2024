@@ -5,7 +5,7 @@ using UnityEngine;
 public class RemoveFirstCard : Card
 {
     protected QueuePerson firstPerson;
-    protected List<QueuePerson> removeThese;
+    public List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {

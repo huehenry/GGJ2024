@@ -9,6 +9,7 @@ public class GameLoader : MonoBehaviour
     public static GameLoader instance;
     private string gameplaySceneName = "Gameplay";
     private string backgroundSceneName;
+    public LevelData currentLevel;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class GameLoader : MonoBehaviour
     {
         // Load the level and gameplay scene
         StartCoroutine(DoLoadLevel(levelData));
+        currentLevel = levelData;
     }
 
 
