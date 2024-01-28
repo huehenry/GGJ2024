@@ -27,8 +27,11 @@ MonoBehaviour:
     timeOnScreen: 3
   - image: {fileID: 21300000, guid: 68f42e308b3b7a34d9383f1b38dd594e, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 6
   - image: {fileID: 21300000, guid: 78a7b4cb20f094e439a23601b52e80a0, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
+  - image: {fileID: 21300000, guid: 567cd483775c8fd4d8ec43a3f8327be7, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 9999
   levelToLoadWhenFinished: {fileID: 0}
