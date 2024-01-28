@@ -25,7 +25,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: faed7e34844415c4a89b8a2ab2825498, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
-  - image: {fileID: 21300000, guid: e2d5010449105b74bb2e3b27fc13c1fc, type: 3}
+  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 16de2485138acc2499453cdb50c15850, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 3514cc11526ec1740b319a5cf07557ea, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
-  - image: {fileID: 21300000, guid: fde6f93b890fea241950e292f2ac2e4b, type: 3}
+  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 2
+    timeOnScreen: 5
   levelToLoadWhenFinished: {fileID: 11400000, guid: 2cfdd90df45dd11419d206055b83d214, type: 2}
