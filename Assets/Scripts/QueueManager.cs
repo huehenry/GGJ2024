@@ -208,6 +208,11 @@ public class QueueManager : MonoBehaviour
     //USE THIS FOR A CARD
     public void Swap(int index1, int index2)
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlayRandomGrumble();
+        }
+
         swap1 = currentQueue[index1];
         swap2 = currentQueue[index2];
         Vector3 temp = swap2.currentTargetPos;
@@ -226,13 +231,26 @@ public class QueueManager : MonoBehaviour
 	{
         //Do nothing. Just resolve?
         UI_CardInventory._cardInventory.cardInventoryStates = UI_CardInventory.states.fizzleCard;
+
+        // Audio
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.fizzleCard);
+        }
+
     }
 
     //USE THIS FOR A CARD
     public void Deletion(List<QueuePerson> removeThese)
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlayRandomGrumble();
+        }
+
+
         //Put them far to the left.
-        foreach(QueuePerson person in removeThese)
+        foreach (QueuePerson person in removeThese)
 		{
             currentQueue.Remove(person);
             person.transform.localPosition = new Vector3(-20, person.transform.localPosition.y, person.transform.localPosition.z);
@@ -248,6 +266,12 @@ public class QueueManager : MonoBehaviour
 
     public void TrapDoor(List<QueuePerson> removeThese)
     {
+
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.wilheilm);
+        }
+
         //Don't move them yet. Just remove them from the queue
         foreach (QueuePerson person in removeThese)
         {
