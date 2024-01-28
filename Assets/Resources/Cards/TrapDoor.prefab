@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e7229cbeb7644787101f2f476bb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 093b99871e2e9194ebeae636249781ab, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: ea68e5932372a9e4eadabf83b551a87e, type: 3}
   cardNameForVisual: It's a Trap!
+  removeThese:
+  - {fileID: 0}

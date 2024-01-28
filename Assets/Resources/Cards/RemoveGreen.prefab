@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c4ef4a0d927af45b7f2b4c193497d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 093b99871e2e9194ebeae636249781ab, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: 017d649d1e78ed24dbcb8fbe18f76807, type: 3}
   cardNameForVisual: It's Not Easy
+  removeThese: []

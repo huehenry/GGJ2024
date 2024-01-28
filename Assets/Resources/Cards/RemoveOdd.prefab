@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8670f2ed04575094ea4a95ea0c12b84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 093b99871e2e9194ebeae636249781ab, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: 9044eba838508954996982ead0e32aaa, type: 3}
   cardNameForVisual: Odd Job
+  removeThese: []
