@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
-  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
-  - {fileID: 11400000, guid: 0c745564e22868749a06fd9a2f77f6af, type: 2}
-  - {fileID: 11400000, guid: c2544f0081498e04fba68575369c4dc7, type: 2}
-  - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
+  - {fileID: 11400000, guid: c89849f2e090f594da7d5aae0f1bbd37, type: 2}
+  - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  - {fileID: 11400000, guid: 78037e59a8c15ad4d8ec9c0b958e7cd9, type: 2}
+  - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
+  - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
   CardList:
   - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: -6695932560272133924, guid: bc82d7c18164339449afe7219dfe015f, type: 3}
