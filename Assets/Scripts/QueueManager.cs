@@ -50,7 +50,7 @@ public class QueueManager : MonoBehaviour
         //Give them positions
         for (int i = 0; i < currentQueue.Count; i++)
         {
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
         }
         currentState = actionStates.spawning;
     }
@@ -196,7 +196,7 @@ public class QueueManager : MonoBehaviour
         //This goes through the current characters left and moves them all at the same time.
         for(int i = 0; i < currentQueue.Count; i++)
 		{
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
             currentQueue[i].move = true;
             currentQueue[i].moveSpeed = moveSpeed;
 		}
@@ -213,7 +213,7 @@ public class QueueManager : MonoBehaviour
         //Give the stragglers their new position. We can do this to everyone and it won't be a problem since people in the queue already are already in place.
         for (int i = 0; i < currentQueue.Count; i++)
         {
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
             currentQueue[i].moveSpeed = moveSpeed;
         }
         //Now we will bring them in.

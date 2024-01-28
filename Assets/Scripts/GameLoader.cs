@@ -68,19 +68,19 @@ public class GameLoader : MonoBehaviour
             for (int i = 0; i < levelData.queue.Count; i++)
             {
                 GameObject tempPerson = Instantiate<GameObject>(GameManager.instance.pfPerson,
-                                                                new Vector3(-20,0,0),
-                                                                Quaternion.Euler(0,90,0));
+                                                                new Vector3(-20,0.5f,0),
+                                                                Quaternion.Euler(0,95,0));
 
                 // Set the data for that person
                 QueuePerson queuePerson = tempPerson.GetComponent<QueuePerson>();
                 queuePerson.LoadFromScriptableObject(levelData.queue[i]);
 
-                // Save them in the game manager
-                //GameManager.instance.persons.Add(queuePerson);
-                //INSTEAD OF DOING THIS WE'RE ADDING THEM TO OUR LIST
+                //ADDING THEM TO OUR LIST
                 personList.Add(queuePerson);
 
-                // TODO: Create a number for them on the screen
+                // TODO: Create a number for them on the screen -- This can be hard in the gameplay scene.
+
+                // TODO: Arrow that shows this is "US" over the player!
 
             }
             GameManager.instance.queueManager.LoadNewQueue(personList);
@@ -98,7 +98,7 @@ public class GameLoader : MonoBehaviour
         Scene gameplayScene = SceneManager.GetSceneByName(gameplaySceneName);
         if (!gameplayScene.IsValid())
         {
-            Debug.Log("Loading Gameplay Scene: " + gameplaySceneName);
+            // Debug.Log("Loading Gameplay Scene: " + gameplaySceneName);
             asyncLoad = SceneManager.LoadSceneAsync(gameplaySceneName);
             while (!asyncLoad.isDone)
             {
@@ -110,7 +110,7 @@ public class GameLoader : MonoBehaviour
         Scene backgroundScene = SceneManager.GetSceneByName(backgroundSceneName);
         if (backgroundScene.IsValid())
         {
-            Debug.Log("Unloading old background: " + backgroundSceneName);
+            // Debug.Log("Unloading old background: " + backgroundSceneName);
             asyncLoad = SceneManager.UnloadSceneAsync(backgroundSceneName);
             while (!asyncLoad.isDone)
             {

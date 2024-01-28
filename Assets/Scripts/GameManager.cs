@@ -41,8 +41,4 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    // Remove a person -- 
-    // For now, this "poofs" them out of existance and they come in at the end of the line.
-
-
 }
