@@ -20,15 +20,7 @@ public class ChangeClothesAroundPlayerCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            MatchClothes();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        MatchClothes();
     }
     protected void MatchClothes()
     {

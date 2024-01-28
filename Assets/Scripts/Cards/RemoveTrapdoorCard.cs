@@ -18,20 +18,12 @@ public class RemoveTrapdoorCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveTrapdoors();
-        }
+        RemoveTrapdoors();
     }
 
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
     protected void RemoveTrapdoors()
     {
+        removeThese = new List<QueuePerson>();
         // get all people on trapdoors
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

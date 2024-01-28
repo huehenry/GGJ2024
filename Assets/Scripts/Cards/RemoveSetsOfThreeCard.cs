@@ -8,19 +8,11 @@ public class RemoveSetsOfThreeCard : Card
     // Start is called before the first frame update
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveTriples();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
+        RemoveTriples();
     }
     protected void RemoveTriples()
     {
+        removeThese = new List<QueuePerson>();
         // get all sets of 3 consecutive same shirt colors
         // add them to removeThese
 

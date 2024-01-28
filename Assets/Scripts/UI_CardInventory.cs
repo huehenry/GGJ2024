@@ -224,11 +224,6 @@ public class UI_CardInventory : MonoBehaviour
 				{
                     b.interactable = false;
 				}
-                //THIS CODE NEEDS TO BE REMOVED ONCE THE CARDS DO IT
-                //Add the following code to every card when its done "resolving"
-                        //UI_CardInventory._cardInventory.DoneResolvingCard();
-                //THEN REMOVE THIS:
-                DoneResolvingCard();
                 break;
             case states.moveCardOffScreen:
                 //The card is resolved. Drop the visual AND the collision away.

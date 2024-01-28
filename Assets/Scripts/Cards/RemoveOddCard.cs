@@ -18,20 +18,12 @@ public class RemoveOddCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveOddPeople();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
+        RemoveOddPeople();
     }
 
     protected void RemoveOddPeople()
     {
+        removeThese = new List<QueuePerson>();
         // get all people in odd spots
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

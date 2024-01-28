@@ -18,15 +18,7 @@ public class ChangePlayerShirtGreenCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            ChangePlayerShirtToGreen();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        ChangePlayerShirtToGreen();
     }
     protected void ChangePlayerShirtToGreen()
     {

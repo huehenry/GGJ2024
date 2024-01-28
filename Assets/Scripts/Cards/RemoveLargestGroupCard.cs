@@ -26,20 +26,13 @@ public class RemoveLargestGroupCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveLargestGroup();
-        }
+        RemoveLargestGroup();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
 
     protected void RemoveLargestGroup()
     {
+        removeThese = new List<QueuePerson>();
         //TODO: Remove largest group
 
         // find largest group of red shirts
@@ -54,6 +47,7 @@ public class RemoveLargestGroupCard : Card
         // add them to removeThese
 
         // remove them from queue
+        removeThese = GameManager.instance.queueManager.largestGroup();
         GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

@@ -719,6 +719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4990129579794559324, guid: 64e295a5eeccf9e44a6255f1c12fe4d8, type: 3}
+      propertyPath: DEBUG
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8090841235918133479, guid: 64e295a5eeccf9e44a6255f1c12fe4d8, type: 3}
       propertyPath: m_Name
       value: UI
@@ -994,6 +998,7 @@ MonoBehaviour:
   - {fileID: 960037437}
   - {fileID: 2037421497}
   - {fileID: 1027656528}
+  trapdoorObjects: []
   trapdoors: 
   moveSpeed: 10
   swapSpeed: 4

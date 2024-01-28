@@ -139,13 +139,14 @@ public class QueueManager : MonoBehaviour
 				}
                 if (doneMoving == true)
                 {
-                    currentState = actionStates.repopulate;
+                    AddStragglersAfterDelete();
                 }
                 break;
             case actionStates.repopulate:
                 //Bringing stragglers in.
                 //This code is nearly identical to spawning new people in, but we can use the temporary list, they're the only ones left.
                 timer += Time.deltaTime;
+                Debug.Log("repopulating");
                 if (timer > 0.2f)
                 {
                     if (stagger < tempList.Count)
@@ -204,7 +205,7 @@ public class QueueManager : MonoBehaviour
         foreach(QueuePerson person in removeThese)
 		{
             currentQueue.Remove(person);
-            person.transform.localPosition = new Vector3(-1000, person.transform.localPosition.y, person.transform.localPosition.z);
+            person.transform.localPosition = new Vector3(-20, person.transform.localPosition.y, person.transform.localPosition.z);
 		}
         //Save them to our templist. We'll need them later
         tempList = new List<QueuePerson>();
@@ -242,6 +243,7 @@ public class QueueManager : MonoBehaviour
         }
         //Now we will bring them in.
         stagger = 0;
+        timer = 0;
         currentState = actionStates.repopulate;
     }
 

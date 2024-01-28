@@ -19,19 +19,12 @@ public class RemoveFirstCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveFirstPerson();
-        }
+        RemoveFirstPerson();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
     protected void RemoveFirstPerson()
     {
+        removeThese = new List<QueuePerson>();
         // find first person in line
         firstPerson = GameManager.instance.queueManager.currentQueue[0];
         // remove them from queue

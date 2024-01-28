@@ -18,18 +18,11 @@ public class RemoveRedCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveReds();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        RemoveReds();
     }
     protected void RemoveReds()
     {
+        removeThese = new List<QueuePerson>();
         // get all red shirt people
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {
