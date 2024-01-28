@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: -6695932560272133924, guid: bc82d7c18164339449afe7219dfe015f, type: 3}
   - {fileID: 6544226127247794430, guid: 89b127f2619737c4d87a2f060e4661ff, type: 3}
   backgroundSceneFilename: LevelWaitingRoom
+  trapdoors: 00000000

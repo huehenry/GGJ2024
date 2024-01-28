@@ -981,6 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86f798fb7752304cba7e81a10e98e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trapdoorPrefab: {fileID: 5206908071265736496, guid: 94bd4335d9549bf44b076a1c44c4e106, type: 3}
   currentQueue: []
   spawnPositions:
   - {fileID: 217222814}
@@ -993,6 +994,7 @@ MonoBehaviour:
   - {fileID: 960037437}
   - {fileID: 2037421497}
   - {fileID: 1027656528}
+  trapdoors: 
   moveSpeed: 10
   swapSpeed: 4
   spinSpeed: 10

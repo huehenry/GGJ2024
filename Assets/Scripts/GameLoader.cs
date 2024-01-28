@@ -83,7 +83,7 @@ public class GameLoader : MonoBehaviour
                 // TODO: Arrow that shows this is "US" over the player!
 
             }
-            GameManager.instance.queueManager.LoadNewQueue(personList);
+            GameManager.instance.queueManager.LoadNewQueue(personList, levelData.trapdoors);
         }
         yield return null;
     }

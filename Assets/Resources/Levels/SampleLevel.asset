@@ -31,3 +31,4 @@ MonoBehaviour:
   - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
   - {fileID: 5322205196736764915, guid: 4d0490c2ee139f647acfda75f16624cb, type: 3}
   backgroundSceneFilename: SampleBackground
+  trapdoors: 00000000000000000000

@@ -25,3 +25,4 @@ MonoBehaviour:
   - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: -182712956111833760, guid: 56468dc15d7385e4f8c119b339560c02, type: 3}
   backgroundSceneFilename: LevelGreyWallOffice
+  trapdoors: 000000000000

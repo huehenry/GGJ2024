@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class QueueManager : MonoBehaviour
 {
+    //Putting this here
+    public GameObject trapdoorPrefab;
 
     public List<QueuePerson> currentQueue;
     public Transform[] spawnPositions;
+    public List<GameObject> trapdoorObjects;
+    public List<bool> trapdoors;
     public float moveSpeed;
     public float swapSpeed;
     public float spinSpeed;
@@ -33,13 +37,14 @@ public class QueueManager : MonoBehaviour
 
     public actionStates currentState;
 
-    public void LoadNewQueue(List<QueuePerson> queueToPopulate)
+    public void LoadNewQueue(List<QueuePerson> queueToPopulate, List<bool> trapdoorList)
 	{
         //Delete old queue
         for(int i = currentQueue.Count-1; i>=0; i--)
 		{
-            Destroy(currentQueue[i].gameObject);
+            Destroy(currentQueue[i].gameObject);             
 		}
+
         currentQueue = new List<QueuePerson>();
         //Create new list.
         foreach(QueuePerson person in queueToPopulate)
@@ -53,6 +58,25 @@ public class QueueManager : MonoBehaviour
             currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
         }
         currentState = actionStates.spawning;
+        //Also add trapdoors
+        //Delete old trapdoors if they exist
+        for(int i = 0; i < trapdoorObjects.Count; i++)
+		{
+            Destroy(trapdoorObjects[i].gameObject);
+		}
+        trapdoorObjects = new List<GameObject>();
+        trapdoors = new List<bool>();
+        for (int i = 0; i < currentQueue.Count; i++)
+		{
+            trapdoors.Add(trapdoorList[i]);
+            //Spawn a trapdoor if necessary.
+            if(trapdoorList[i] == true)
+			{
+                GameObject newDoor = Instantiate(trapdoorPrefab, spawnPositions[i], true);
+                newDoor.transform.localPosition = new Vector3(0, 0.5f, 0);
+                trapdoorObjects.Add(newDoor);
+            }
+		}
     }
 
 	public void Update()
