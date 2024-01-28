@@ -97,11 +97,22 @@ public class UI_CardInventory : MonoBehaviour
 		{
             currentLevelCardInventory.Add(c);
 		}
+
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.cardShuffle);
+        }
+
         // Debug.Log("here");
-	}
+    }
 
     public void ResetLevel()
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlayRandomGrumble();
+        }
+
         //This does the same thing as a new level but does not replace the current card inventory
         animationLerper = 0;
 
@@ -254,6 +265,13 @@ public class UI_CardInventory : MonoBehaviour
                     //CHECK FOR WIN HERE.
                     if(GameManager.instance.queueManager.checkForWin() == true)
 					{
+                        // Play victory jingle
+                        if (AudioManager._audioManager != null)
+                        {
+                            AudioManager._audioManager.PlaySound(AudioManager._audioManager.victory);
+                        }
+
+
                         CutsceneManager._cutsceneManager.PlayCutsceneThenLoadLevel(GameLoader.instance.currentLevel.nextCutscene);
                     }
                 }
@@ -271,11 +289,20 @@ public class UI_CardInventory : MonoBehaviour
 
     public void Hovering(int cardNum)
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.beep);
+        }
+
         currentlyHighlighting[cardNum] = true;
 	}
 
     public void ExitHovering(int cardNum)
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.beep);
+        }
         currentlyHighlighting[cardNum] = false;
     }
 
@@ -286,6 +313,11 @@ public class UI_CardInventory : MonoBehaviour
         currentLevelCardInventory[cardNum].CallEffect();
         thisCardWasPlayed = cardNum;
         cardPlayedPos = buttonObjects[cardNum].anchoredPosition;
+
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.playCard);
+        }
 
     }
 
