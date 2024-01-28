@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: Level6
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: 6f725bbd66706b7449fddf5f23fdbcfd, type: 2}
-  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
-  - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
-  - {fileID: 11400000, guid: 4dca02d39a7fc8647bf83f668f2319e7, type: 2}
-  - {fileID: 11400000, guid: c2544f0081498e04fba68575369c4dc7, type: 2}
-  - {fileID: 11400000, guid: 1b943734f154c4743ae4495ceb2330cf, type: 2}
+  - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
+  - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
+  - {fileID: 11400000, guid: 9bd7eae2a130b2041bc02554c3071eca, type: 2}
+  - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
+  - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
+  - {fileID: 11400000, guid: 2b0d686d5f541e04a86965875a2217aa, type: 2}
   CardList:
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
+  - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
+  - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
+  - {fileID: 8062952275021569664, guid: 299d9d902a5220d44b8318610619fe73, type: 3}
   - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
-  - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
   backgroundSceneFilename: LevelGreyWallOfficeAlt
