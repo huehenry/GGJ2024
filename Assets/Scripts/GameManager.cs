@@ -42,4 +42,9 @@ public class GameManager : MonoBehaviour
     {
     }
 
+    // For that rare time you want the GameManager to die
+    public void SelfDestruct()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -1252,57 +1252,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: queueManager
-      value: 
-      objectReference: {fileID: 5564876078480935850}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
       propertyPath: offscreenSpawnPoint
       value: 
       objectReference: {fileID: 728418518}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 217222814}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1168910021}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1972615098}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 1940956505}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 40468428}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[5]
-      value: 
-      objectReference: {fileID: 2143938784}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[6]
-      value: 
-      objectReference: {fileID: 1147685295}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[7]
-      value: 
-      objectReference: {fileID: 960037437}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[8]
-      value: 
-      objectReference: {fileID: 2037421497}
-    - target: {fileID: 2714480305391826565, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      propertyPath: PeopleSpawnPoints.Array.data[9]
-      value: 
-      objectReference: {fileID: 1027656528}
     - target: {fileID: 4798382680782960081, guid: 53a21c334674f684086abba2b83226bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1343,6 +1295,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 217222814}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1168910021}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 1972615098}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 1940956505}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 40468428}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[5]
+      value: 
+      objectReference: {fileID: 2143938784}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[6]
+      value: 
+      objectReference: {fileID: 1147685295}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[7]
+      value: 
+      objectReference: {fileID: 960037437}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[8]
+      value: 
+      objectReference: {fileID: 2037421497}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spawnPositions.Array.data[9]
+      value: 
+      objectReference: {fileID: 1027656528}
     - target: {fileID: 6624162778401287521, guid: 53a21c334674f684086abba2b83226bd, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1350,47 +1342,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6624162778401287521, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5564876078480935850}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a21c334674f684086abba2b83226bd, type: 3}
---- !u!1 &5564876078480935849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6624162778401287521, guid: 53a21c334674f684086abba2b83226bd, type: 3}
-  m_PrefabInstance: {fileID: 5564876078480935848}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5564876078480935850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5564876078480935849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86f798fb7752304cba7e81a10e98e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trapdoorPrefab: {fileID: 5206908071265736496, guid: 94bd4335d9549bf44b076a1c44c4e106, type: 3}
-  currentQueue: []
-  spawnPositions:
-  - {fileID: 217222814}
-  - {fileID: 1168910021}
-  - {fileID: 1972615098}
-  - {fileID: 1940956505}
-  - {fileID: 40468428}
-  - {fileID: 2143938784}
-  - {fileID: 1147685295}
-  - {fileID: 960037437}
-  - {fileID: 2037421497}
-  - {fileID: 1027656528}
-  trapdoorObjects: []
-  trapdoors: 
-  moveSpeed: 10
-  swapSpeed: 4
-  spinSpeed: 10
-  currentState: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
