@@ -96,7 +96,7 @@ public class UI_CardInventory : MonoBehaviour
 		{
             currentLevelCardInventory.Add(c);
 		}
-        Debug.Log("here");
+        // Debug.Log("here");
 	}
 
     public void ResetLevel()

@@ -8,9 +8,9 @@ using UnityEngine;
 public class QueuePersonData : ScriptableObject
 {
     public bool isPlayer = false;
-    public HeightType height = HeightType.TALL;
     public ShirtType shirt;
     public PantsType pants;
+    public HeightType height = HeightType.TALL;
     // TODO: Variations? 
 
 }
