@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf9717a8f42403643bc0963cf4917ed0, type: 3}
-  m_Name: Level2
+  m_Name: TEMP_OLDLEVEL2
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: e7ec9db3233b30c42b64216840dd0c9d, type: 2}
   - {fileID: 11400000, guid: c89849f2e090f594da7d5aae0f1bbd37, type: 2}
-  - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
-  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
+  - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  - {fileID: 11400000, guid: 78037e59a8c15ad4d8ec9c0b958e7cd9, type: 2}
   - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
-  - {fileID: 11400000, guid: e7ec9db3233b30c42b64216840dd0c9d, type: 2}
+  - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
   CardList:
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
-  - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
-  - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
+  - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
+  - {fileID: -6695932560272133924, guid: bc82d7c18164339449afe7219dfe015f, type: 3}
+  - {fileID: 6544226127247794430, guid: 89b127f2619737c4d87a2f060e4661ff, type: 3}
   backgroundSceneFilename: LevelWaitingRoom
-  trapdoors: 000000010000
+  trapdoors: 0000000000
   nextCutscene: {fileID: 11400000, guid: 745255cdf45ca1a4f9bb09c0806b4f97, type: 2}
