@@ -2,48 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoveTrapdoorCard : Card
+public class ChangePlayerShirtBlueCard : Card
 {
-    public List<QueuePerson> removeThese;
+    int playerPosition;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public override void CallEffect()
     {
         if (isUsed != true)
         {
             isUsed = true;
-            RemoveTrapdoors();
+            ChangePlayerShirtToBlue();
         }
     }
-
     public override void RefreshCard()
     {
         isUsed = false;
-        removeThese.Clear();
     }
-    protected void RemoveTrapdoors()
+    protected void ChangePlayerShirtToBlue()
     {
-        // get all people on trapdoors
+        // get player position
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {
             if (GameManager.instance.queueManager.currentQueue[i] != null)
             {
-                if (GameManager.instance.queueManager.trapdoors[i] == true)
+                if (GameManager.instance.queueManager.currentQueue[i].isPlayer == true)
                 {
-                    removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+                    GameManager.instance.queueManager.currentQueue[playerPosition].shirt = ShirtType.BLUE; break;
                 }
             }
         }
-        // remove them from queue
-        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }
