@@ -62,14 +62,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c424773da06ad9045bbde691c5b59242, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2839903041369706572}
+      addedObject: {fileID: 6281448923729568284}
   m_SourcePrefab: {fileID: 100100000, guid: c424773da06ad9045bbde691c5b59242, type: 3}
 --- !u!1 &863610033762944945 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c424773da06ad9045bbde691c5b59242, type: 3}
   m_PrefabInstance: {fileID: 521644676922112736}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2839903041369706572
+--- !u!114 &6281448923729568284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3c02c793092440843a7ddb8daa109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UID: 0
+  UID: 
   isPlayer: 0
   height: 0
   shirt: 0
