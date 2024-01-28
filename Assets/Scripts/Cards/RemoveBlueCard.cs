@@ -8,19 +8,12 @@ public class RemoveBlueCard : Card
     // Start is called before the first frame update
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveBlues();
-        }
+        RemoveBlues();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
     protected void RemoveBlues()
     {
+        removeThese = new List<QueuePerson>();
         // get all blue shirt people
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

@@ -19,20 +19,12 @@ public class RemoveEvenCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveEvenPeople();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
+        RemoveEvenPeople();
     }
 
     protected void RemoveEvenPeople()
     {
+        removeThese = new List<QueuePerson>();
         // get all people in even spots
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

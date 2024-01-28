@@ -19,15 +19,7 @@ public class SwapAheadPlayerCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            SwapPlayerAndAhead();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        SwapPlayerAndAhead();
     }
     protected void SwapPlayerAndAhead() // there has gotta be a better name for this. oh well
     {

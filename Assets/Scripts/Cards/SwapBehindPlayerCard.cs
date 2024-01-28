@@ -19,16 +19,9 @@ public class SwapBehindPlayer : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            SwapPlayerAndBehind();
-        }
+        SwapPlayerAndBehind();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-    }
+
     protected void SwapPlayerAndBehind() // there has gotta be a better name for this. oh well
     {
         // get player position

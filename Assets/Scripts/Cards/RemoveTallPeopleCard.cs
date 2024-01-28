@@ -8,19 +8,13 @@ public class RemoveTallPeopleCard : Card
     // Start is called before the first frame update
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveTalls();
-        }
+        RemoveTalls();
+
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
     protected void RemoveTalls()
     {
+        removeThese = new List<QueuePerson>();
         // get all tall people
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

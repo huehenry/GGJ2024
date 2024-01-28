@@ -20,15 +20,7 @@ public class SwapByHeightCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            SwapSameHeight();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        SwapSameHeight();
     }
 
     protected void SwapSameHeight()

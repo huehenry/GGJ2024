@@ -18,16 +18,9 @@ public class ChangePlayerShirtRedCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            ChangePlayerShirtToRed();
-        }
+        ChangePlayerShirtToRed();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-    }
+
     protected void ChangePlayerShirtToRed()
     {
         // get player position

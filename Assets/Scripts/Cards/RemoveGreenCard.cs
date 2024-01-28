@@ -18,19 +18,12 @@ public class RemoveGreenCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveGreens();
-        }
+        RemoveGreens();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
     protected void RemoveGreens()
     {
+        removeThese = new List<QueuePerson>();
         // get all green shirt people
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {

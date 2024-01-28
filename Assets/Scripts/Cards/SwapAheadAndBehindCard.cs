@@ -20,16 +20,9 @@ public class SwapAheadAndBehindCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            SwapAheadAndBehind();
-        }
+        SwapAheadAndBehind();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-    }
+
     protected void SwapAheadAndBehind()
     {
         // get player's position

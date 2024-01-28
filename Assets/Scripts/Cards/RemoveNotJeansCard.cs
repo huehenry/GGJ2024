@@ -8,19 +8,12 @@ public class RemoveNotJeansCard : Card
     // Start is called before the first frame update
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveNotJeans();
-        }
+        RemoveNotJeans();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-        removeThese.Clear();
-    }
+
     protected void RemoveNotJeans()
     {
+        removeThese = new List<QueuePerson>();
         // get all not jeans
         for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
         {
