@@ -20,6 +20,7 @@ public class QueuePerson : MonoBehaviour
     public ShirtType shirt;
     public PantsType pants;
     public float yOffset = 0.0f;
+    public GameObject arrow;
     // TODO: Variations? 
 
     private SkinnedMeshRenderer _skinnedMeshRenderer;
@@ -42,11 +43,16 @@ public class QueuePerson : MonoBehaviour
         UID = System.Guid.NewGuid().ToString();
     }
 
-    public void LoadFromScriptableObject ( QueuePersonData data, bool isPlayer = false )
+    public void LoadFromScriptableObject ( QueuePersonData data )
     {        
 
         // Set the objects isPlayer to what was passed in
-        this.isPlayer = isPlayer;
+        isPlayer = data.isPlayer;
+        if(isPlayer == true)
+		{
+            Debug.Log("THIS IS A PLAYER");
+            arrow.SetActive(true);
+		}
 
         // Set the object data
         height = data.height;

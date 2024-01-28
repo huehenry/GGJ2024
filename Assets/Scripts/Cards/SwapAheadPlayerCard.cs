@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwapAheadPlayerCard : Card
 {
+    int playerPosition;
+    int aheadPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,20 @@ public class SwapAheadPlayerCard : Card
     }
     protected void SwapPlayerAndAhead() // there has gotta be a better name for this. oh well
     {
-        
+        // get player position
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (GameManager.instance.queueManager.currentQueue[i].isPlayer == true)
+                {
+                    playerPosition = i; break;
+                }
+            }
+        }
+        // get person ahead of player's position
+        aheadPosition = playerPosition - 1;
+        // swap player and person behind them
+        GameManager.instance.queueManager.Swap(playerPosition, aheadPosition);
     }
 }

@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 4635593100763591856, guid: 5a2d2fb5f7680804c9e9a734d7b8e7df, type: 3}
   - {fileID: -6699681724062847724, guid: e5a85a07cc29d424a95b2ff25f1005d6, type: 3}
   backgroundSceneFilename: LevelOutside
-  trapdoors: 00000000
+  trapdoors: 01000000
