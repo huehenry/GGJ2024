@@ -36,6 +36,6 @@ public class RemoveTrapdoorCard : Card
             }
         }
         // remove them from queue
-        GameManager.instance.queueManager.Deletion(removeThese);
+        GameManager.instance.queueManager.TrapDoor(removeThese);
     }
 }
