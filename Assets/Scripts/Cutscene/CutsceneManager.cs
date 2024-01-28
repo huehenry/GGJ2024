@@ -43,7 +43,7 @@ public class CutsceneManager : MonoBehaviour
 
         foreach (CutsceneScreen screen in cutscene.screens)
         {
-            Debug.Log("showing screen " + screen.image.name);
+            //Debug.Log("showing screen " + screen.image.name);
             // Show the image
             if (screen.image != null)
             {
@@ -60,9 +60,9 @@ public class CutsceneManager : MonoBehaviour
             }
 
             // Wait the delay
-            Debug.Log("Waiting " + screen.image.name + screen.timeOnScreen);
+            //Debug.Log("Waiting " + screen.image.name + screen.timeOnScreen);
             yield return new WaitForSeconds(screen.timeOnScreen);
-            Debug.Log("Done Waiting " + screen.image.name + screen.timeOnScreen);
+            //Debug.Log("Done Waiting " + screen.image.name + screen.timeOnScreen);
         }
 
         // Hide the cutscene
