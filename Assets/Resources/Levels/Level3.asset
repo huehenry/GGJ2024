@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: e7ec9db3233b30c42b64216840dd0c9d, type: 2}
-  - {fileID: 11400000, guid: c89849f2e090f594da7d5aae0f1bbd37, type: 2}
+  - {fileID: 11400000, guid: a1256706af64f464893e0118d54ea381, type: 2}
+  - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  - {fileID: 11400000, guid: 8a630aa4e38a02a4e81398a00ae51ee4, type: 2}
+  - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
+  - {fileID: 11400000, guid: 9bd7eae2a130b2041bc02554c3071eca, type: 2}
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
-  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
-  - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
-  - {fileID: 11400000, guid: e7ec9db3233b30c42b64216840dd0c9d, type: 2}
   CardList:
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
+  - {fileID: -5664075201377738397, guid: 695aaedcfa4b86648ad635d3cfaa398c, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
-  - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
+  - {fileID: -182712956111833760, guid: 56468dc15d7385e4f8c119b339560c02, type: 3}
   backgroundSceneFilename: LevelBrownWallOffice
-  trapdoors: 000000010000
+  trapdoors: 010000000100
   nextCutscene: {fileID: 11400000, guid: eccfa5bc730ad4343b80e4a237827bdb, type: 2}
