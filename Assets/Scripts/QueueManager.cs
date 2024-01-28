@@ -30,6 +30,7 @@ public class QueueManager : MonoBehaviour
         spawning,
         swapping,
         removal_delete,
+        removal_trapdoor,
         removal_moveForward,
         repopulate,
         changingProperty
@@ -128,6 +129,25 @@ public class QueueManager : MonoBehaviour
                 //This function takes the remaining people and puts them in the correct spot;
                 RecalculatePositionsAfterDelete();
                 break;
+            case actionStates.removal_trapdoor:
+                //Everyone in the temp file needs to animated downwards. Once they're low enough then we just throw them to the left and its a normal removal
+                timer += Time.deltaTime;
+                foreach(QueuePerson dropper in tempList)
+				{
+                    Vector3 newTarget = dropper.transform.localPosition;
+                    newTarget.y -= 1;
+                    dropper.transform.localPosition = Vector3.Lerp(dropper.transform.localPosition, newTarget, 16*Time.deltaTime);
+				}
+                if(timer>1)
+				{
+                    foreach(QueuePerson person in tempList)
+					{
+                        person.transform.localPosition = new Vector3(-20, 0.5f, person.transform.localPosition.z);
+                    }
+                    RecalculatePositionsAfterDelete();
+                    timer = 0;
+                }
+                break;
             case actionStates.removal_moveForward:
                 //Moving leftovers forward
                 //Wait for them all to be done.
@@ -224,6 +244,23 @@ public class QueueManager : MonoBehaviour
             tempList.Add(p);
 		}
         currentState = actionStates.removal_delete;
+    }
+
+    public void TrapDoor(List<QueuePerson> removeThese)
+    {
+        //Don't move them yet. Just remove them from the queue
+        foreach (QueuePerson person in removeThese)
+        {
+            currentQueue.Remove(person);
+        }
+        //Save them to our templist. We'll need them later
+        tempList = new List<QueuePerson>();
+        foreach (QueuePerson p in removeThese)
+        {
+            tempList.Add(p);
+        }
+        timer = 0;
+        currentState = actionStates.removal_trapdoor;
     }
 
     public void RecalculatePositionsAfterDelete()

@@ -6,7 +6,6 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance;
     [Header("GameData")]
     public QueueManager queueManager;
@@ -42,4 +41,9 @@ public class GameManager : MonoBehaviour
     {
     }
 
+    // For that rare time you want the GameManager to die
+    public void SelfDestruct()
+    {
+        Destroy(gameObject);
+    }
 }

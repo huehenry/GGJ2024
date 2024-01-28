@@ -27,7 +27,6 @@ MonoBehaviour:
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
-  - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
   backgroundSceneFilename: LevelBrownWallOffice
   trapdoors: 00000000000000000000
-  nextCutscene: {fileID: 11400000, guid: 219f6058755b518428bd5dd76f41fdaa, type: 2}
+  nextCutscene: {fileID: 11400000, guid: 445f3744a8646234a851d379a537d335, type: 2}

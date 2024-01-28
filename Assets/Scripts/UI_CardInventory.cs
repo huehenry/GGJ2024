@@ -104,6 +104,13 @@ public class UI_CardInventory : MonoBehaviour
 	{
         //This does the same thing as a new level but does not replace the current card inventory
         animationLerper = 0;
+
+        // Reset fizzled cards
+        for (int i = 0; i < cardSprites.Length; i++)
+        {
+            cardSprites[i].transform.localScale = Vector3.one;
+        }
+
         GameLoader.instance.LoadLevel(GameLoader.instance.currentLevel);
 	}
 
