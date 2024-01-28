@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemoveRedCard : Card
 {
+    public List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,22 +18,23 @@ public class RemoveRedCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveReds();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        RemoveReds();
     }
     protected void RemoveReds()
     {
+        removeThese = new List<QueuePerson>();
         // get all red shirt people
-
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (GameManager.instance.queueManager.currentQueue[i].shirt == ShirtType.RED)
+                {
+                    removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+                }
+            }
+        }
         // remove them from queue
-
-        // add them to end of queue in same order
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

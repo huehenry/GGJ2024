@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class QueuePerson : MonoBehaviour
 {
-    private float yOffsetBasedOnSizeTall = 0.25f;
+    private float yOffsetBasedOnSizeTall = 0.5f;
     private float yOffsetBasedOnSizeNorm = 0.5f;
-    private float yOffsetBasedOnSizeSmall = 0.80f;
+    private float yOffsetBasedOnSizeSmall = 0.5f;
     private float yScaleBasedOnSizeSmall = 0.85f;
     private float yScaleBasedOnSizeNorm = 1.0f;
     private float yScaleBasedOnSizeTall = 1.15f;
@@ -19,6 +19,8 @@ public class QueuePerson : MonoBehaviour
     public HeightType height;
     public ShirtType shirt;
     public PantsType pants;
+    public float yOffset = 0.0f;
+    public GameObject arrow;
     // TODO: Variations? 
 
     private SkinnedMeshRenderer _skinnedMeshRenderer;
@@ -41,11 +43,16 @@ public class QueuePerson : MonoBehaviour
         UID = System.Guid.NewGuid().ToString();
     }
 
-    public void LoadFromScriptableObject ( QueuePersonData data, bool isPlayer = false )
+    public void LoadFromScriptableObject ( QueuePersonData data )
     {        
 
         // Set the objects isPlayer to what was passed in
-        this.isPlayer = isPlayer;
+        isPlayer = data.isPlayer;
+        if(isPlayer == true)
+		{
+            Debug.Log("THIS IS A PLAYER");
+            arrow.SetActive(true);
+		}
 
         // Set the object data
         height = data.height;
@@ -63,15 +70,15 @@ public class QueuePerson : MonoBehaviour
         {
             case HeightType.TALL:
                 transform.localScale = new Vector3(1, yScaleBasedOnSizeTall, 1);
-                transform.position = new Vector3(transform.position.x, yOffsetBasedOnSizeTall, transform.position.z);
+                yOffset = yOffsetBasedOnSizeTall;
                 break;
             case HeightType.NORM:
                 transform.localScale = new Vector3(1, yScaleBasedOnSizeNorm, 1);
-                transform.position = new Vector3(transform.position.x, yOffsetBasedOnSizeNorm, transform.position.z);
+                yOffset = yOffsetBasedOnSizeNorm;
                 break;
             case HeightType.SMALL:
                 transform.localScale = new Vector3(1, yScaleBasedOnSizeSmall, 1);
-                transform.position = new Vector3(transform.position.x, yOffsetBasedOnSizeSmall, transform.position.z);
+                yOffset = yOffsetBasedOnSizeSmall;
                 break;
         }
 

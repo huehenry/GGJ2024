@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("GameData")]
     public QueueManager queueManager;
     public Transform offscreenSpawnPoint;
+    public bool isPaused = false;
 
     [Header("Prefabs")]
     public GameObject pfUI;
@@ -40,9 +41,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
     }
-
-    // Remove a person -- 
-    // For now, this "poofs" them out of existance and they come in at the end of the line.
-
 
 }

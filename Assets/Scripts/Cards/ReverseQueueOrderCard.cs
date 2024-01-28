@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReverseQueueOrderCard : Card
 {
+    public List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,20 +18,20 @@ public class ReverseQueueOrderCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            ReverseQueue();
-        }
-    }
-    public override void RefreshCard()
-    {
-        isUsed = false;
+        ReverseQueue();
     }
     protected void ReverseQueue()
     {
+        removeThese = new List<QueuePerson>();
         // remove all people in queue
-
+        for (int i = GameManager.instance.queueManager.currentQueue.Count-1; i >= 0; i--)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+            }
+        }
         // replace them in opposite order
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

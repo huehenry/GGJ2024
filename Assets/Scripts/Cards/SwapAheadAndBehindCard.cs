@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SwapAheadAndBehindCard : Card
 {
+    protected int playerPosition;
+    protected int aheadPosition;
+    protected int behindPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,28 +20,36 @@ public class SwapAheadAndBehindCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            SwapAheadAndBehind();
-        }
+        SwapAheadAndBehind();
     }
-    public override void RefreshCard()
-    {
-        isUsed = false;
-    }
+
     protected void SwapAheadAndBehind()
     {
         // get player's position
-
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (GameManager.instance.queueManager.currentQueue[i].isPlayer == true)
+                {
+                    playerPosition = i; break;
+                }
+            }
+        }
         // get ahead person's position
-
+        aheadPosition = playerPosition - 1;
         // get behind person's position
+        behindPosition = playerPosition + 1;
+        // swap ahead and behind
+        if (aheadPosition >= 0 && behindPosition < GameManager.instance.queueManager.currentQueue.Count)
+        {
+            GameManager.instance.queueManager.Swap(aheadPosition, behindPosition);
+		}
+		else
+		{
+            //FIZZLE.
+            GameManager.instance.queueManager.Fizzle();
 
-        // remove them both from queue
-
-        // place ahead at behind's old position
-
-        // place behind at ahead's old position
+        }
     }
 }

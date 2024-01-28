@@ -18,7 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4dca02d39a7fc8647bf83f668f2319e7, type: 2}
   - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
   CardList:
-  - {fileID: 9084176716518369392, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
+  - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: 4635593100763591856, guid: 5a2d2fb5f7680804c9e9a734d7b8e7df, type: 3}
   - {fileID: -6699681724062847724, guid: e5a85a07cc29d424a95b2ff25f1005d6, type: 3}
   backgroundSceneFilename: LevelOutside
+  trapdoors: 00000000
+  nextCutscene: {fileID: 11400000, guid: a0903245ac5d65c4ebcf834966c770ef, type: 2}

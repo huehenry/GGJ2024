@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemoveTrapdoorCard : Card
 {
+    public List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,23 +18,24 @@ public class RemoveTrapdoorCard : Card
     }
     public override void CallEffect()
     {
-        if (isUsed != true)
-        {
-            isUsed = true;
-            RemoveTrapdoors();
-        }
+        RemoveTrapdoors();
     }
 
-    public override void RefreshCard()
-    {
-        isUsed = false;
-    }
     protected void RemoveTrapdoors()
     {
+        removeThese = new List<QueuePerson>();
         // get all people on trapdoors
-
-        // remove them
-
-        // add them to end of queue in same order
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (GameManager.instance.queueManager.trapdoors[i] == true)
+                {
+                    removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+                }
+            }
+        }
+        // remove them from queue
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

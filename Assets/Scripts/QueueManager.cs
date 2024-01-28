@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class QueueManager : MonoBehaviour
 {
+    //Putting this here
+    public GameObject trapdoorPrefab;
 
     public List<QueuePerson> currentQueue;
     public Transform[] spawnPositions;
+    public List<GameObject> trapdoorObjects;
+    public List<bool> trapdoors;
     public float moveSpeed;
     public float swapSpeed;
     public float spinSpeed;
@@ -33,13 +37,14 @@ public class QueueManager : MonoBehaviour
 
     public actionStates currentState;
 
-    public void LoadNewQueue(List<QueuePerson> queueToPopulate)
+    public void LoadNewQueue(List<QueuePerson> queueToPopulate, List<bool> trapdoorList)
 	{
         //Delete old queue
         for(int i = currentQueue.Count-1; i>=0; i--)
 		{
-            Destroy(currentQueue[i].gameObject);
+            Destroy(currentQueue[i].gameObject);             
 		}
+
         currentQueue = new List<QueuePerson>();
         //Create new list.
         foreach(QueuePerson person in queueToPopulate)
@@ -50,9 +55,30 @@ public class QueueManager : MonoBehaviour
         //Give them positions
         for (int i = 0; i < currentQueue.Count; i++)
         {
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
         }
+        timer = 0;
+        stagger = 0;
         currentState = actionStates.spawning;
+        //Also add trapdoors
+        //Delete old trapdoors if they exist
+        for(int i = 0; i < trapdoorObjects.Count; i++)
+		{
+            Destroy(trapdoorObjects[i].gameObject);
+		}
+        trapdoorObjects = new List<GameObject>();
+        trapdoors = new List<bool>();
+        for (int i = 0; i < currentQueue.Count; i++)
+		{
+            trapdoors.Add(trapdoorList[i]);
+            //Spawn a trapdoor if necessary.
+            if(trapdoorList[i] == true)
+			{
+                GameObject newDoor = Instantiate(trapdoorPrefab, spawnPositions[i], true);
+                newDoor.transform.localPosition = new Vector3(0, 0.5f, 0);
+                trapdoorObjects.Add(newDoor);
+            }
+		}
     }
 
 	public void Update()
@@ -115,13 +141,14 @@ public class QueueManager : MonoBehaviour
 				}
                 if (doneMoving == true)
                 {
-                    currentState = actionStates.repopulate;
+                    AddStragglersAfterDelete();
                 }
                 break;
             case actionStates.repopulate:
                 //Bringing stragglers in.
                 //This code is nearly identical to spawning new people in, but we can use the temporary list, they're the only ones left.
                 timer += Time.deltaTime;
+                Debug.Log("repopulating");
                 if (timer > 0.2f)
                 {
                     if (stagger < tempList.Count)
@@ -170,7 +197,15 @@ public class QueueManager : MonoBehaviour
         swap2.move = true;
         swap1.moveSpeed = swapSpeed;
         swap2.moveSpeed = swapSpeed;
+        currentQueue[index1] = swap2;
+        currentQueue[index2] = swap1;
         currentState = actionStates.swapping;
+    }
+
+    public void Fizzle()
+	{
+        //Do nothing. Just resolve?
+        UI_CardInventory._cardInventory.cardInventoryStates = UI_CardInventory.states.fizzleCard;
     }
 
     //USE THIS FOR A CARD
@@ -180,7 +215,7 @@ public class QueueManager : MonoBehaviour
         foreach(QueuePerson person in removeThese)
 		{
             currentQueue.Remove(person);
-            person.transform.localPosition = new Vector3(-1000, person.transform.localPosition.y, person.transform.localPosition.z);
+            person.transform.localPosition = new Vector3(-20, person.transform.localPosition.y, person.transform.localPosition.z);
 		}
         //Save them to our templist. We'll need them later
         tempList = new List<QueuePerson>();
@@ -196,7 +231,7 @@ public class QueueManager : MonoBehaviour
         //This goes through the current characters left and moves them all at the same time.
         for(int i = 0; i < currentQueue.Count; i++)
 		{
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
             currentQueue[i].move = true;
             currentQueue[i].moveSpeed = moveSpeed;
 		}
@@ -213,11 +248,12 @@ public class QueueManager : MonoBehaviour
         //Give the stragglers their new position. We can do this to everyone and it won't be a problem since people in the queue already are already in place.
         for (int i = 0; i < currentQueue.Count; i++)
         {
-            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition;
+            currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
             currentQueue[i].moveSpeed = moveSpeed;
         }
         //Now we will bring them in.
         stagger = 0;
+        timer = 0;
         currentState = actionStates.repopulate;
     }
 

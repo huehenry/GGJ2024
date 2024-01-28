@@ -10,4 +10,6 @@ public class LevelData : ScriptableObject
     public List<QueuePersonData> queue;
     public List<Card> CardList;
     public string backgroundSceneFilename;
+    public List<bool> trapdoors;
+    public Cutscene nextCutscene;
 }
