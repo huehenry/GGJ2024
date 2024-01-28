@@ -92,7 +92,6 @@ public class QueueManager : MonoBehaviour
                         if(done == true)
 						{
                             currentState = actionStates.waiting;
-                            FinishAnAction();
                         }
                     }
 				}
@@ -221,6 +220,69 @@ public class QueueManager : MonoBehaviour
         stagger = 0;
         currentState = actionStates.repopulate;
     }
+
+    public List<QueuePerson> largestGroup()
+	{
+        List<QueuePerson> returner = new List<QueuePerson>();
+
+        QueuePerson bestStreakStarter = currentQueue[0];
+        int currentStreak = 1;
+        int bestStreak = 0;
+
+        for(int i = 1; i< currentQueue.Count; i++)
+		{
+            if(currentQueue[i].shirt == currentQueue[i-1].shirt)
+			{
+                currentStreak += 1;
+                if(currentStreak>bestStreak)
+				{
+                    bestStreakStarter = currentQueue[i - currentStreak];
+                    bestStreak = currentStreak;
+                }
+			}
+			else
+			{
+                currentStreak = 1;
+			}
+		}
+        currentStreak = 1;
+        for (int i = 1; i < currentQueue.Count; i++)
+        {
+            if (currentQueue[i].pants == currentQueue[i - 1].pants)
+            {
+                currentStreak += 1;
+                if (currentStreak > bestStreak)
+                {
+                    bestStreakStarter = currentQueue[i - currentStreak];
+                    bestStreak = currentStreak;
+                }
+            }
+            else
+            {
+                currentStreak = 1;
+            }
+        }
+
+        //NOW create an array of this group. Start with the streak starter and add anyone else.
+        for(int i = 0; i < currentQueue.Count; i++)
+		{
+            if (returner.Count > 0)
+            {
+                if(bestStreak>0)
+				{
+                    bestStreak -= 1;
+                    returner.Add(currentQueue[i]);
+				}
+			}
+			else if (currentQueue[i] == bestStreakStarter)
+			{
+                returner.Add(currentQueue[i]);
+                bestStreak -= 1;
+			}
+		}
+
+        return returner;
+	}
 
 
 	public void FinishAnAction()
