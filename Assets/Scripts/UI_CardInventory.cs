@@ -238,10 +238,10 @@ public class UI_CardInventory : MonoBehaviour
 				{
                     cardPositions[thisCardWasPlayed] = new Vector2(0, heightUsed);
                     cardRotations[thisCardWasPlayed] = Quaternion.Euler(0, 0, 0);
+                    buttonObjects[thisCardWasPlayed].anchoredPosition = Vector2.Lerp(cardPlayedPos, cardPositions[thisCardWasPlayed], stepLerper);
                 }
-                buttonObjects[thisCardWasPlayed].anchoredPosition = Vector2.Lerp(cardPlayedPos, cardPositions[thisCardWasPlayed], stepLerper);
                 //Once lerper is done, set its image and name and then restart
-                if(animationLerper>1)
+                if (animationLerper>1)
 				{
                     cardSprites[thisCardWasPlayed].sprite = emptySprite;
                     cardNames[thisCardWasPlayed].text = "UNUSED";
