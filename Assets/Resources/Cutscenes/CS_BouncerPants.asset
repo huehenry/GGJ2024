@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36be2c346a3c58946a757b6b1b115e63, type: 3}
+  m_Name: CS_BouncerPants
+  m_EditorClassIdentifier: 
+  screens:
+  - image: {fileID: 21300000, guid: 13af29b01cc43ae4eb75a4b6f3964fe2, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: b7be35c244dd2eb43a104ddfcddeef6c, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: 13af29b01cc43ae4eb75a4b6f3964fe2, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 5
+  - image: {fileID: 21300000, guid: e85067d21304c6749ab2c274621c39b7, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1.5
+  - image: {fileID: 21300000, guid: 40233c12be39b6b44900ff02c7490749, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: 326fce69adb067c42a5187cc7a58bb2a, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 0c3b87e6903832d47a9abf5f67646db4, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: 35875a8c8fa87ed4fa526cb3031dbee1, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  levelToLoadWhenFinished: {fileID: 11400000, guid: e7a4f2b59dc1e1e458ebcc4e610c0433, type: 2}
