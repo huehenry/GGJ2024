@@ -6,7 +6,6 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance;
     [Header("GameData")]
     public QueueManager queueManager;
