@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("GameData")]
     public QueueManager queueManager;
     public Transform offscreenSpawnPoint;
+    public bool isPaused = false;
 
     [Header("Prefabs")]
     public GameObject pfUI;
