@@ -21,19 +21,19 @@ MonoBehaviour:
     timeOnScreen: 3
   - image: {fileID: 21300000, guid: 13af29b01cc43ae4eb75a4b6f3964fe2, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 5
+    timeOnScreen: 2
   - image: {fileID: 21300000, guid: b7be35c244dd2eb43a104ddfcddeef6c, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 2
   - image: {fileID: 21300000, guid: 5283d244b1aa6b84bb72d22acd17ff1d, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 1
   - image: {fileID: 21300000, guid: 745779e21faeb6645bf5070e36509cde, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
   - image: {fileID: 21300000, guid: 40233c12be39b6b44900ff02c7490749, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 2
+    timeOnScreen: 3
   - image: {fileID: 21300000, guid: 326fce69adb067c42a5187cc7a58bb2a, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
