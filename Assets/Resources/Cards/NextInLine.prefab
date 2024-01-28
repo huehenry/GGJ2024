@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97babae3d196a545b40778ef8a203ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 093b99871e2e9194ebeae636249781ab, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: 9723d8ba06d66f64cba4cfe50fbf7f19, type: 3}
   cardNameForVisual: Blue Shell
-  removeThese: []
+  removeThese:
+  - {fileID: 0}

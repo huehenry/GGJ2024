@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4026fc0dc9dcbd948b0923b31c02f432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 093b99871e2e9194ebeae636249781ab, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: f0a87f4c65511d94fb3a01d94c4d48ed, type: 3}
   cardNameForVisual: The Ol' Flipperoonie
