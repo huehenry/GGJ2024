@@ -309,7 +309,7 @@ public class QueueManager : MonoBehaviour
                 currentStreak += 1;
                 if(currentStreak>bestStreak)
 				{
-                    bestStreakStarter = currentQueue[i - currentStreak];
+                    bestStreakStarter = currentQueue[(i+1) - currentStreak];
                     bestStreak = currentStreak;
                 }
 			}
@@ -326,7 +326,7 @@ public class QueueManager : MonoBehaviour
                 currentStreak += 1;
                 if (currentStreak > bestStreak)
                 {
-                    bestStreakStarter = currentQueue[i - currentStreak];
+                    bestStreakStarter = currentQueue[(i+1) - currentStreak];
                     bestStreak = currentStreak;
                 }
             }
@@ -335,7 +335,6 @@ public class QueueManager : MonoBehaviour
                 currentStreak = 1;
             }
         }
-
         //NOW create an array of this group. Start with the streak starter and add anyone else.
         for(int i = 0; i < currentQueue.Count; i++)
 		{
