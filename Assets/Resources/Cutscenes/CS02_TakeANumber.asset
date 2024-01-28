@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36be2c346a3c58946a757b6b1b115e63, type: 3}
+  m_Name: CS02_TakeANumber
+  m_EditorClassIdentifier: 
+  screens:
+  - image: {fileID: 21300000, guid: ad8c914fa8dcfb741a3ed4ab182bb9a3, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 5cacef777e1a9ab4d9870a9036072e46, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 06b08775420e34f4c8e929c391731f76, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: faed7e34844415c4a89b8a2ab2825498, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: e2d5010449105b74bb2e3b27fc13c1fc, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 16de2485138acc2499453cdb50c15850, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: f3106aaecfe7d4341871e445331ec55b, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 48ebc8390f56e6a468def8ab5002a11b, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 3514cc11526ec1740b319a5cf07557ea, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: fde6f93b890fea241950e292f2ac2e4b, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  levelToLoadWhenFinished: {fileID: 11400000, guid: 2cfdd90df45dd11419d206055b83d214, type: 2}
