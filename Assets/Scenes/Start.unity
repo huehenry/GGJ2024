@@ -711,7 +711,7 @@ MonoBehaviour:
         m_MethodName: LoadLevel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 81ba5fe7d76bd1948973a96ac3c8be5c, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 9064deccbbf8cb74aaa429560cdc10a2, type: 2}
           m_ObjectArgumentAssemblyTypeName: LevelData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1610,7 +1610,7 @@ MonoBehaviour:
         m_MethodName: LoadLevel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9064deccbbf8cb74aaa429560cdc10a2, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 81ba5fe7d76bd1948973a96ac3c8be5c, type: 2}
           m_ObjectArgumentAssemblyTypeName: LevelData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1822,6 +1822,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2337060153195673210, guid: 85700b0dfc50c3f4d8cabe8813616746, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd448693bb551654191ab2e94a04d2c6, type: 3}
+    - target: {fileID: 3589522706820169126, guid: 85700b0dfc50c3f4d8cabe8813616746, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5686920040896165288, guid: 85700b0dfc50c3f4d8cabe8813616746, type: 3}
       propertyPath: m_Pivot.x
       value: 0
