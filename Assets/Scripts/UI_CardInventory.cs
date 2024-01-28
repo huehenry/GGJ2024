@@ -10,6 +10,8 @@ public class UI_CardInventory : MonoBehaviour
     public bool DEBUG;
     public Card[] debugCards;
 
+    public GameObject resetButton;
+
     public static UI_CardInventory _cardInventory;
 
     public static Card[] thisLevelCards;
@@ -102,6 +104,7 @@ public class UI_CardInventory : MonoBehaviour
         {
             AudioManager._audioManager.PlaySound(AudioManager._audioManager.cardShuffle);
         }
+        resetButton.SetActive(false);
 
         // Debug.Log("here");
     }
@@ -166,6 +169,25 @@ public class UI_CardInventory : MonoBehaviour
                 cardInventoryStates = states.readyToPlayACard;
                 break;
             case states.readyToPlayACard:
+                if(resetButton.activeSelf == false)
+				{
+                    if(GameManager.instance.queueManager.currentQueue.Count>0)
+					{
+                        bool tester = true;
+                        foreach(QueuePerson p in GameManager.instance.queueManager.currentQueue)
+						{
+                            if(p.move == true)
+							{
+                                tester = false;
+                            }                                
+						}
+                        if(tester == true)
+						{
+                            resetButton.SetActive(true);
+                        }                            
+					}
+
+				}
                 //Remaining cards always very quickly center themselves based on how many are left
                 int numCardsLeft = 0;
                 foreach(Image i in cardSprites)
@@ -318,7 +340,7 @@ public class UI_CardInventory : MonoBehaviour
         {
             AudioManager._audioManager.PlaySound(AudioManager._audioManager.playCard);
         }
-
+        resetButton.SetActive(false);
     }
 
     public void DoneResolvingCard()
