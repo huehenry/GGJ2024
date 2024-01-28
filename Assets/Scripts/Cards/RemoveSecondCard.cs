@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RemoveSecondCard : Card
 {
+    protected QueuePerson secondPerson;
+    protected List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,14 @@ public class RemoveSecondCard : Card
     public override void RefreshCard()
     {
         isUsed = false;
+        removeThese.Clear();
     }
     protected void RemoveSecondPerson()
     {
         // find second person in line
-
+        secondPerson = GameManager.instance.queueManager.currentQueue[1];
         // remove them from queue
-
-        // add them to end of queue
+        removeThese.Add(secondPerson);
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

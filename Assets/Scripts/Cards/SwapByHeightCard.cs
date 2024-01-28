@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SwapByHeightCard : Card
 {
+    protected int playerPosition;
+    protected int otherPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +34,21 @@ public class SwapByHeightCard : Card
     protected void SwapSameHeight()
     {
         // get player height and position
-        
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (GameManager.instance.queueManager.currentQueue[i].isPlayer == true)
+                {
+                    playerPosition = i; break;
+                    // get their height here
+                }
+            }
+        }
         // get other person with same height? and their position (unclear if this is player choice or if it's just random or what)
-
-        // put player at other person's old position
-
-        // put other person at player's old position
+            // use the player height to determine the other person
+            // get the other person's position
+        // swap player and other person
+        GameManager.instance.queueManager.Swap(playerPosition,otherPosition);
     }
 }

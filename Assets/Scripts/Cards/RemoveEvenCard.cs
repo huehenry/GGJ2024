@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RemoveEvenCard : Card
 {
-    
+    protected List<QueuePerson> removeThese;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +28,24 @@ public class RemoveEvenCard : Card
     public override void RefreshCard()
     {
         isUsed = false;
+        removeThese.Clear();
     }
 
     protected void RemoveEvenPeople()
     {
         // get all people in even spots
-
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (i % 2 == 1)
+                {
+                    removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+                }
+            }
+        }
         // remove them from queue
 
-        // add them to end of queue in the same order
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemoveOddCard : Card
 {
+    public List<QueuePerson> removeThese;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +27,24 @@ public class RemoveOddCard : Card
     public override void RefreshCard()
     {
         isUsed = false;
+        removeThese.Clear();
     }
 
     protected void RemoveOddPeople()
     {
         // get all people in odd spots
+        for (int i = 0; i < GameManager.instance.queueManager.currentQueue.Count; i++)
+        {
+            if (GameManager.instance.queueManager.currentQueue[i] != null)
+            {
+                if (i % 2 == 0)
+                {
+                    removeThese.Add(GameManager.instance.queueManager.currentQueue[i]);
+                }
+            }
+        }
+        // remove them from queue 
 
-        // remove them from queue
-
-        // add them to end of queue in the same order
+        GameManager.instance.queueManager.Deletion(removeThese);
     }
 }
