@@ -168,7 +168,6 @@ public class QueueManager : MonoBehaviour
                 //Bringing stragglers in.
                 //This code is nearly identical to spawning new people in, but we can use the temporary list, they're the only ones left.
                 timer += Time.deltaTime;
-                Debug.Log("repopulating");
                 if (timer > 0.2f)
                 {
                     if (stagger < tempList.Count)
