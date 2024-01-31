@@ -16,13 +16,22 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: e3dc92b151edb634cb6d7743c38843e7, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 1.5
+  - image: {fileID: 21300000, guid: 13a1e30702fca3345b32733669f9a95b, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 9e2504dbdad4048448aa70ba057fe4e7, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  - image: {fileID: 21300000, guid: 0f0b31ef557deb3489175c1ec3955840, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
   - image: {fileID: 21300000, guid: 2eea9a627e3b58b439f5173ba5440b89, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 1.5
+    timeOnScreen: 2
   - image: {fileID: 21300000, guid: bc46c5f4bbd0f9d4e847877ac29db041, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 1.5
+    timeOnScreen: 4
   - image: {fileID: 21300000, guid: 890f792d7232c5049b0d63722fb31e08, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 1.5
+    timeOnScreen: 1
   levelToLoadWhenFinished: {fileID: 11400000, guid: b31ccbbe8b64d3646af2620a97247fec, type: 2}

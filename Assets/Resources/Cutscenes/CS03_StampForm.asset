@@ -16,22 +16,25 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 3ee707b8f3dfa9641845d8d86a0969e9, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
-  - image: {fileID: 21300000, guid: 1afdcd252fc60954d9ca830027ffa0b6, type: 3}
+  - image: {fileID: 21300000, guid: 490e2b6f8fa3d334ba17b31ac3fe7b09, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
-  - image: {fileID: 21300000, guid: 23b365e8d05782d48aa6e2c83f5c3eff, type: 3}
+  - image: {fileID: 21300000, guid: 8cac43c973b23f947a2b587d7693bfa3, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: efdd2843d0907a740b8e0e0d351f8678, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
-  - image: {fileID: 21300000, guid: 1fae8d30e6b455a4681645d5ed26e86b, type: 3}
+  - image: {fileID: 21300000, guid: 340528fcb97f06541b1003336ca2ebcc, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 1
-  - image: {fileID: 21300000, guid: 06bc64adf2677c54a853d2f9716e1c81, type: 3}
+  - image: {fileID: 21300000, guid: eaebd0ef3fdbbad48b7a720130acb9dc, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
-  - image: {fileID: 21300000, guid: 87b611967b5a0d54bba91a3cbaa5b4a2, type: 3}
+  - image: {fileID: 21300000, guid: d09681588ce640348980e3b075ae2747, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 3
+  - image: {fileID: 21300000, guid: 9c4e9a0bf074ee546b17a8a77867e70e, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
   levelToLoadWhenFinished: {fileID: 11400000, guid: dc2347741cbb80846b6d7432d36a12c8, type: 2}

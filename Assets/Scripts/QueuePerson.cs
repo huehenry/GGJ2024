@@ -9,9 +9,9 @@ public class QueuePerson : MonoBehaviour
     private float yOffsetBasedOnSizeTall = 0.5f;
     private float yOffsetBasedOnSizeNorm = 0.5f;
     private float yOffsetBasedOnSizeSmall = 0.5f;
-    private float yScaleBasedOnSizeSmall = 0.85f;
-    private float yScaleBasedOnSizeNorm = 1.0f;
-    private float yScaleBasedOnSizeTall = 1.15f;
+    private float yScaleBasedOnSizeSmall = 1.0f;
+    private float yScaleBasedOnSizeNorm = 1.15f;
+    private float yScaleBasedOnSizeTall = 1.3f;
 
 
     public string UID;
@@ -69,15 +69,15 @@ public class QueuePerson : MonoBehaviour
         switch (height)
         {
             case HeightType.TALL:
-                transform.localScale = new Vector3(1, yScaleBasedOnSizeTall, 1);
+                transform.localScale = new Vector3(1.15f, yScaleBasedOnSizeTall, 1.15f);
                 yOffset = yOffsetBasedOnSizeTall;
                 break;
             case HeightType.NORM:
-                transform.localScale = new Vector3(1, yScaleBasedOnSizeNorm, 1);
+                transform.localScale = new Vector3(1.15f, yScaleBasedOnSizeNorm, 1.15f);
                 yOffset = yOffsetBasedOnSizeNorm;
                 break;
             case HeightType.SMALL:
-                transform.localScale = new Vector3(1, yScaleBasedOnSizeSmall, 1);
+                transform.localScale = new Vector3(1.15f, yScaleBasedOnSizeSmall, 1.15f);
                 yOffset = yOffsetBasedOnSizeSmall;
                 break;
         }

@@ -6,6 +6,7 @@ public class QueueManager : MonoBehaviour
 {
     //Putting this here
     public GameObject trapdoorPrefab;
+    public GameObject[] numbers;
 
     public List<QueuePerson> currentQueue;
     public Transform[] spawnPositions;
@@ -80,6 +81,17 @@ public class QueueManager : MonoBehaviour
                 trapdoorObjects.Add(newDoor);
             }
 		}
+        for(int i = 0; i < numbers.Length; i++)
+		{
+            if(i<currentQueue.Count)
+			{
+                numbers[i].SetActive(true);
+			}
+			else
+			{
+                numbers[i].SetActive(false);
+            }
+		}
     }
 
 	public void Update()
@@ -98,7 +110,7 @@ public class QueueManager : MonoBehaviour
             case actionStates.spawning:
                 //Bring people in staggered
                 timer += Time.deltaTime;
-                if (timer > 0.2f)
+                if (timer > 0.35f)
 				{
                     if (stagger < currentQueue.Count)
                     {
@@ -168,7 +180,7 @@ public class QueueManager : MonoBehaviour
                 //Bringing stragglers in.
                 //This code is nearly identical to spawning new people in, but we can use the temporary list, they're the only ones left.
                 timer += Time.deltaTime;
-                if (timer > 0.2f)
+                if (timer > 0.35f)
                 {
                     if (stagger < tempList.Count)
                     {
