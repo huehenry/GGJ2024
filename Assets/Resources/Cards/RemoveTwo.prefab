@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSpriteForVisual: {fileID: 21300000, guid: 2054a0b324cdb1f49a102f1446fc6326, type: 3}
-  cardNameForVisual: Poop Knife
+  cardNameForVisual: Cut the Crap

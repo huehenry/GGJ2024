@@ -32,6 +32,6 @@ public class ReverseQueueOrderCard : Card
             }
         }
         // replace them in opposite order
-        GameManager.instance.queueManager.Deletion(removeThese);
+        GameManager.instance.queueManager.Reversal(removeThese);
     }
 }

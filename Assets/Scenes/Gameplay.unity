@@ -5423,8 +5423,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
+      propertyPath: spinSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
       propertyPath: swapSpeed
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5958065764690728124, guid: 53a21c334674f684086abba2b83226bd, type: 3}
       propertyPath: numbers.Array.size

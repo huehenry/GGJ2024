@@ -31,6 +31,10 @@ public class QueueManager : MonoBehaviour
         spawning,
         swapping,
         removal_delete,
+        removal_turnTowardsUser,
+        removal_moveTowardsUser,
+        removal_turnOffscreen,
+        removal_moveOffscreen,
         removal_trapdoor,
         removal_moveForward,
         repopulate,
@@ -140,6 +144,78 @@ public class QueueManager : MonoBehaviour
                 //For now they're popping away so just them really far to the left.
                 //This function takes the remaining people and puts them in the correct spot;
                 RecalculatePositionsAfterDelete();
+                break;
+            case actionStates.removal_turnTowardsUser:
+                Quaternion target = Quaternion.Euler(0, 180, 0);
+                bool turned = true;
+                foreach (QueuePerson q in tempList)
+				{
+                    q.transform.localRotation = Quaternion.RotateTowards(q.transform.localRotation , target, 270 * Time.deltaTime);
+                    if(q.transform.localRotation!=target)
+					{
+                        turned = false;
+					}                        
+				}
+                if(turned == true)
+				{
+                    currentState = actionStates.removal_moveTowardsUser;
+				}
+                break;
+            case actionStates.removal_moveTowardsUser:
+                bool finishedForward = true;
+                foreach(QueuePerson q in tempList)
+				{
+                    Vector3 newPos = q.transform.localPosition;
+                    newPos.z = -2;
+                    q.transform.localPosition = Vector3.MoveTowards(q.transform.localPosition, newPos, 6 * Time.deltaTime);
+                    if(q.transform.localPosition!=newPos)
+					{
+                        finishedForward = false;
+					}
+				}                    
+                if(finishedForward == true)
+				{
+                    currentState = actionStates.removal_turnOffscreen;
+                }
+                break;
+            case actionStates.removal_turnOffscreen:
+                Quaternion targetOff = Quaternion.Euler(0, -90, 0);
+                bool turnedOffScreen = true;
+                foreach (QueuePerson q in tempList)
+                {
+                    q.transform.localRotation = Quaternion.RotateTowards(q.transform.localRotation, targetOff, 270 * Time.deltaTime);
+                    if (q.transform.localRotation != targetOff)
+                    {
+                        turnedOffScreen = false;
+                    }
+                }
+                if (turnedOffScreen == true)
+                {
+                    currentState = actionStates.removal_moveOffscreen;
+                }
+                break;
+            case actionStates.removal_moveOffscreen:
+                bool finishedOffscreen = true;
+                foreach (QueuePerson q in tempList)
+                {
+                    Vector3 newPos = q.transform.localPosition;
+                    newPos.x = -20;
+                    q.transform.localPosition = Vector3.MoveTowards(q.transform.localPosition, newPos, 20 * Time.deltaTime);
+                    if (q.transform.localPosition != newPos)
+                    {
+                        finishedOffscreen = false;
+                    }
+					else
+					{
+                        q.transform.localRotation = Quaternion.Euler(0, 90, 0);
+                        newPos.z = 0;
+                        q.transform.localPosition = newPos;
+                    }
+                }
+                if (finishedOffscreen == true)
+                {
+                    RecalculatePositionsAfterDelete();
+                }
                 break;
             case actionStates.removal_trapdoor:
                 //Everyone in the temp file needs to animated downwards. Once they're low enough then we just throw them to the left and its a normal removal
@@ -264,7 +340,6 @@ public class QueueManager : MonoBehaviour
         foreach (QueuePerson person in removeThese)
 		{
             currentQueue.Remove(person);
-            person.transform.localPosition = new Vector3(-20, person.transform.localPosition.y, person.transform.localPosition.z);
 		}
         //Save them to our templist. We'll need them later
         tempList = new List<QueuePerson>();
@@ -272,7 +347,29 @@ public class QueueManager : MonoBehaviour
 		{
             tempList.Add(p);
 		}
-        currentState = actionStates.removal_delete;
+        currentState = actionStates.removal_turnTowardsUser;
+    }
+
+    public void Reversal(List<QueuePerson> removeThese)
+    {
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlayRandomGrumble();
+        }
+
+
+        //Put them far to the left.
+        foreach (QueuePerson person in removeThese)
+        {
+            currentQueue.Remove(person);
+        }
+        //Save them to our templist. We'll need them later
+        tempList = new List<QueuePerson>();
+        foreach (QueuePerson p in removeThese)
+        {
+            tempList.Add(p);
+        }
+        currentState = actionStates.removal_turnOffscreen;
     }
 
     public void TrapDoor(List<QueuePerson> removeThese)

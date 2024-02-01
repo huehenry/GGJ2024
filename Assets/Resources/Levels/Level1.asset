@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
   - {fileID: 11400000, guid: 1b943734f154c4743ae4495ceb2330cf, type: 2}
+  - {fileID: 11400000, guid: 3169010113d61474294e1692c28ff2a3, type: 2}
   - {fileID: 11400000, guid: 4dca02d39a7fc8647bf83f668f2319e7, type: 2}
   - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
   CardList:

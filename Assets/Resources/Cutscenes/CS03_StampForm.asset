@@ -13,16 +13,10 @@ MonoBehaviour:
   m_Name: CS03_StampForm
   m_EditorClassIdentifier: 
   screens:
-  - image: {fileID: 21300000, guid: 3ee707b8f3dfa9641845d8d86a0969e9, type: 3}
-    soundClip: {fileID: 0}
-    timeOnScreen: 2
   - image: {fileID: 21300000, guid: 490e2b6f8fa3d334ba17b31ac3fe7b09, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 8cac43c973b23f947a2b587d7693bfa3, type: 3}
-    soundClip: {fileID: 0}
-    timeOnScreen: 2
-  - image: {fileID: 21300000, guid: efdd2843d0907a740b8e0e0d351f8678, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 340528fcb97f06541b1003336ca2ebcc, type: 3}

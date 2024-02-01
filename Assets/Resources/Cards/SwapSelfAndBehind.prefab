@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSpriteForVisual: {fileID: 21300000, guid: f0c0cece08b0a28479cc10d176dbf684, type: 3}
-  cardNameForVisual: Age Before Beauty
+  cardNameForVisual: No, I Insist

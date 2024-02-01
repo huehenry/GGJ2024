@@ -15,16 +15,17 @@ MonoBehaviour:
   queue:
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
   - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
-  - {fileID: 11400000, guid: a1256706af64f464893e0118d54ea381, type: 2}
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
-  - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
+  - {fileID: 11400000, guid: a1256706af64f464893e0118d54ea381, type: 2}
+  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
+  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
   CardList:
   - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 8322574693682439416, guid: 5fe68d3bc3bb7f446b717fd3b064f06f, type: 3}
   backgroundSceneFilename: LevelGreyWallOffice
-  trapdoors: 01000101010100
+  trapdoors: 0100010100000100
   nextCutscene: {fileID: 11400000, guid: 5c274e5e1d3727442b12a29782225d4c, type: 2}
