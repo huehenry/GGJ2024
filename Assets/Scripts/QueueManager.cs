@@ -135,6 +135,7 @@ public class QueueManager : MonoBehaviour
                         if(done == true)
 						{
                             currentState = actionStates.waiting;
+                            UI_CardInventory._cardInventory.cardInventoryStates = UI_CardInventory.states.newLevelReplace;
                         }
                     }
 				}

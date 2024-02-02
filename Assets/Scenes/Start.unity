@@ -3079,6 +3079,114 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep
+      value: 
+      objectReference: {fileID: 8300000, guid: 79642c53f62252140ad251670eef466d, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: playCard
+      value: 
+      objectReference: {fileID: 8300000, guid: c90a85bd9efef004a98389d710c69047, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle
+      value: 
+      objectReference: {fileID: 8300000, guid: 1229df888a2307e4fb7842a50e4dadc9, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a959ee6c40f338439cb74f3e1cd6a23, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c90a85bd9efef004a98389d710c69047, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 611c15a9a2f79884382dba1f76c06e2f, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: beep.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b97ca9d0a68dbbb42b98d0975def0887, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: victory.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: fizzleCard.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: victory.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dfd40950b896af4db63de6e096ed09a, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: playCard.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c90a85bd9efef004a98389d710c69047, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: playCard.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a959ee6c40f338439cb74f3e1cd6a23, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: playCard.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 611c15a9a2f79884382dba1f76c06e2f, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c4022b56a601e14fb368d31f63affcd, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 97ec7b2886a961a41b61ec4a683e9ab4, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: abc4ffb69b9d2454f908f8b640117cb1, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3f254180028774429706d17be457011, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: wilheilm.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe6c849dbf0a344a9ca3031d90d0af9, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: fizzleCard.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a4c60d2d588d344386f2bc2e5a7edab, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 79642c53f62252140ad251670eef466d, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1229df888a2307e4fb7842a50e4dadc9, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35b012929b37a14468baa92743849755, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ad2187619625d74ebdaa5faca615a46, type: 3}
+    - target: {fileID: 2174555785375292822, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
+      propertyPath: cardShuffle.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 872a88a9e7d8c27498a038a4cfc4d176, type: 3}
     - target: {fileID: 4202490639204058144, guid: eaced98672fd86e418ea9e2d4f992afa, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -3327,6 +3435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapdoorPrefab: {fileID: 5206908071265736496, guid: 94bd4335d9549bf44b076a1c44c4e106, type: 3}
+  numbers: []
   currentQueue: []
   spawnPositions:
   - {fileID: 0}

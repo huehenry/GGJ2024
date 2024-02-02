@@ -88,6 +88,12 @@ public class UI_CardInventory : MonoBehaviour
         {
             NewLevel(debugCards);
         }
+        foreach (RectTransform r in buttonObjects)
+        {
+            Vector2 currentPos = r.anchoredPosition;
+            currentPos.y = heightUsed;
+            r.anchoredPosition = currentPos;
+        }
     }
 
 	public void NewLevel(Card[] newLevelCards)
@@ -134,21 +140,12 @@ public class UI_CardInventory : MonoBehaviour
         switch(cardInventoryStates)
 		{
             case states.oldLevelReset:
-                //Loading a new level. Drop all the cards off the screen
-                animationLerper += Time.deltaTime*3;
-                foreach(RectTransform r in buttonObjects)
-				{
+                foreach (RectTransform r in buttonObjects)
+                {
                     Vector2 currentPos = r.anchoredPosition;
-                    float posLerper = Mathf.SmoothStep(0, heightUsed, animationLerper);
-                    currentPos.y = posLerper;
+                    currentPos.y = heightUsed;
                     r.anchoredPosition = currentPos;
-				}
-                if(animationLerper >= 1)
-				{
-                    //Done moving offscreen.
-                    cardInventoryStates = states.newLevelReplace;
-                    animationLerper = 0;
-				}
+                }
                 break;
             case states.newLevelReplace:
                 //Now replace the cards with the new ones.

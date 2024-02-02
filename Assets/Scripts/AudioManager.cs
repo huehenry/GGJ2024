@@ -6,12 +6,12 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager _audioManager;
     
-    public AudioClip beep;
-    public AudioClip cardShuffle;
-    public AudioClip playCard;
-    public AudioClip fizzleCard;
-    public AudioClip victory;
-    public AudioClip wilheilm;
+    public AudioClip[] beep;
+    public AudioClip[] cardShuffle;
+    public AudioClip[] playCard;
+    public AudioClip[] fizzleCard;
+    public AudioClip[] victory;
+    public AudioClip[] wilheilm;
     public List<AudioClip> grumbles;
 
     private void Awake()
@@ -27,9 +27,9 @@ public class AudioManager : MonoBehaviour
     }
     // Start is called before the first frame update
  
-    public void PlaySound( AudioClip clip )
+    public void PlaySound( AudioClip[] clip )
     {
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(clip[Random.Range(0,clip.Length)], Camera.main.transform.position);
     }
 
     public void PlayRandomGrumble()
