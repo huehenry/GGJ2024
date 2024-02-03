@@ -23,7 +23,7 @@ public class QueuePerson : MonoBehaviour
     public GameObject arrow;
     // TODO: Variations? 
 
-    private SkinnedMeshRenderer _skinnedMeshRenderer;
+    public SkinnedMeshRenderer _skinnedMeshRenderer;
 
     public Vector3 currentTargetPos;
     public float moveSpeed;

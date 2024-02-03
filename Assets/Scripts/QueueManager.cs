@@ -38,7 +38,8 @@ public class QueueManager : MonoBehaviour
         removal_trapdoor,
         removal_moveForward,
         repopulate,
-        changingProperty
+        changingProperty,
+        stopSpinning
 	}
 
     public actionStates currentState;
@@ -100,45 +101,45 @@ public class QueueManager : MonoBehaviour
 
 	public void Update()
 	{
-		switch (currentState)
-		{
+        switch (currentState)
+        {
             case actionStates.swapping:
                 //Swapping two positions.
                 //Wait for both of the guys to stop moving. Then move on
-                if(swap1.move ==false && swap2.move == false)
-				{
+                if (swap1.move == false && swap2.move == false)
+                {
                     currentState = actionStates.waiting;
                     FinishAnAction();
-				}
+                }
                 break;
             case actionStates.spawning:
                 //Bring people in staggered
                 timer += Time.deltaTime;
                 if (timer > 0.35f)
-				{
+                {
                     if (stagger < currentQueue.Count)
                     {
                         currentQueue[stagger].move = true;
                         stagger += 1;
                         timer = 0;
-					}
-					else
-					{
+                    }
+                    else
+                    {
                         bool done = true;
-                        foreach(QueuePerson person in currentQueue)
-						{
-                            if(person.move == true)
-							{
+                        foreach (QueuePerson person in currentQueue)
+                        {
+                            if (person.move == true)
+                            {
                                 done = false;
-							}
-						}
-                        if(done == true)
-						{
+                            }
+                        }
+                        if (done == true)
+                        {
                             currentState = actionStates.waiting;
                             UI_CardInventory._cardInventory.cardInventoryStates = UI_CardInventory.states.newLevelReplace;
                         }
                     }
-				}
+                }
                 break;
             case actionStates.removal_delete:
                 //Deleting some people to re-add them after.
@@ -150,32 +151,32 @@ public class QueueManager : MonoBehaviour
                 Quaternion target = Quaternion.Euler(0, 180, 0);
                 bool turned = true;
                 foreach (QueuePerson q in tempList)
-				{
-                    q.transform.localRotation = Quaternion.RotateTowards(q.transform.localRotation , target, 270 * Time.deltaTime);
-                    if(q.transform.localRotation!=target)
-					{
+                {
+                    q.transform.localRotation = Quaternion.RotateTowards(q.transform.localRotation, target, 270 * Time.deltaTime);
+                    if (q.transform.localRotation != target)
+                    {
                         turned = false;
-					}                        
-				}
-                if(turned == true)
-				{
+                    }
+                }
+                if (turned == true)
+                {
                     currentState = actionStates.removal_moveTowardsUser;
-				}
+                }
                 break;
             case actionStates.removal_moveTowardsUser:
                 bool finishedForward = true;
-                foreach(QueuePerson q in tempList)
-				{
+                foreach (QueuePerson q in tempList)
+                {
                     Vector3 newPos = q.transform.localPosition;
                     newPos.z = -2;
                     q.transform.localPosition = Vector3.MoveTowards(q.transform.localPosition, newPos, 6 * Time.deltaTime);
-                    if(q.transform.localPosition!=newPos)
-					{
+                    if (q.transform.localPosition != newPos)
+                    {
                         finishedForward = false;
-					}
-				}                    
-                if(finishedForward == true)
-				{
+                    }
+                }
+                if (finishedForward == true)
+                {
                     currentState = actionStates.removal_turnOffscreen;
                 }
                 break;
@@ -206,8 +207,8 @@ public class QueueManager : MonoBehaviour
                     {
                         finishedOffscreen = false;
                     }
-					else
-					{
+                    else
+                    {
                         q.transform.localRotation = Quaternion.Euler(0, 90, 0);
                         newPos.z = 0;
                         q.transform.localPosition = newPos;
@@ -221,16 +222,16 @@ public class QueueManager : MonoBehaviour
             case actionStates.removal_trapdoor:
                 //Everyone in the temp file needs to animated downwards. Once they're low enough then we just throw them to the left and its a normal removal
                 timer += Time.deltaTime;
-                foreach(QueuePerson dropper in tempList)
-				{
+                foreach (QueuePerson dropper in tempList)
+                {
                     Vector3 newTarget = dropper.transform.localPosition;
                     newTarget.y -= 1;
-                    dropper.transform.localPosition = Vector3.Lerp(dropper.transform.localPosition, newTarget, 16*Time.deltaTime);
-				}
-                if(timer>1)
-				{
-                    foreach(QueuePerson person in tempList)
-					{
+                    dropper.transform.localPosition = Vector3.Lerp(dropper.transform.localPosition, newTarget, 16 * Time.deltaTime);
+                }
+                if (timer > 1)
+                {
+                    foreach (QueuePerson person in tempList)
+                    {
                         person.transform.localPosition = new Vector3(-20, 0.5f, person.transform.localPosition.z);
                     }
                     RecalculatePositionsAfterDelete();
@@ -241,13 +242,13 @@ public class QueueManager : MonoBehaviour
                 //Moving leftovers forward
                 //Wait for them all to be done.
                 bool doneMoving = true;
-                foreach(QueuePerson person in currentQueue)
-				{
-                    if(person.move == true)
-					{
+                foreach (QueuePerson person in currentQueue)
+                {
+                    if (person.move == true)
+                    {
                         doneMoving = false;
-					}
-				}
+                    }
+                }
                 if (doneMoving == true)
                 {
                     AddStragglersAfterDelete();
@@ -284,11 +285,47 @@ public class QueueManager : MonoBehaviour
                 }
                 break;
             case actionStates.changingProperty:
-                //This will be done whenever anyone is changing properties. Spin them while it changes, then stop spinning them
-                //TODO later!
-
+                    timer += Time.deltaTime;
+                    foreach (QueuePerson spinMe in tempList)
+                    {
+                        Quaternion targetRot = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, spinMe.transform.localRotation.eulerAngles.y + 45.0f, spinMe.transform.localRotation.eulerAngles.z);
+                        spinMe.transform.localRotation = Quaternion.RotateTowards(spinMe.transform.localRotation, targetRot, timer*3);
+                    }
+                    if (timer > 2)
+                    {
+                        foreach(QueuePerson change in tempList)
+						{
+                            change.SetVisuals();
+						}
+                        currentState = actionStates.stopSpinning;
+                    }
                 break;
-
+            case actionStates.stopSpinning:
+                timer -= Time.deltaTime;
+                foreach (QueuePerson spinMe in tempList)
+                {
+                    Quaternion targetRot = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, spinMe.transform.localRotation.eulerAngles.y + 45.0f, spinMe.transform.localRotation.eulerAngles.z);
+                    if (timer <= 0.5f)
+                    {
+                        targetRot = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, 90, spinMe.transform.localRotation.eulerAngles.z);
+                        spinMe.transform.localRotation = Quaternion.RotateTowards(spinMe.transform.localRotation, targetRot, timer * 3);
+					}
+					else
+					{
+                        spinMe.transform.localRotation = Quaternion.RotateTowards(spinMe.transform.localRotation, targetRot, timer * 3);
+                    }
+                }
+                if (timer <=0)
+                {
+                    foreach (QueuePerson spinMe in tempList)
+                    {
+                        spinMe.transform.localRotation = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, 90, spinMe.transform.localRotation.eulerAngles.z);
+                    }
+                     timer = 0;
+                    currentState = actionStates.waiting;
+                    FinishAnAction();
+                }
+                break;
         }
 
 	}
@@ -518,6 +555,14 @@ public class QueueManager : MonoBehaviour
             returner = true;
 		}
         return returner;
+	}
+
+    public void UpdateVisuals(List<QueuePerson> affectThese)
+	{
+        tempList = affectThese;
+        //Put us in the state to spin people
+        timer = 0;
+        currentState = actionStates.changingProperty;
 	}
 
 }

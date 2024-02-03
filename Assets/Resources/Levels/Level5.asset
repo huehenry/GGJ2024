@@ -28,6 +28,6 @@ MonoBehaviour:
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
   - {fileID: 8062952275021569664, guid: 299d9d902a5220d44b8318610619fe73, type: 3}
-  backgroundSceneFilename: LevelBrownWallOfficeAlt
+  backgroundSceneFilename: LevelGreyWallOfficeEscalator
   trapdoors: 01000100010000000100
   nextCutscene: {fileID: 11400000, guid: d4902fcb4992cf84faf288971441f9ce, type: 2}

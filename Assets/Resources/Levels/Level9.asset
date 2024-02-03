@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf9717a8f42403643bc0963cf4917ed0, type: 3}
-  m_Name: Level8
+  m_Name: Level9
   m_EditorClassIdentifier: 
   queue:
   - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
@@ -27,6 +27,6 @@ MonoBehaviour:
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
   - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
-  backgroundSceneFilename: LevelEscalatorLobby
+  backgroundSceneFilename: LevelWaitingRoom
   trapdoors: 000000010000000101
-  nextCutscene: {fileID: 11400000, guid: 50160935807e37b4db7a87722c2a9fbc, type: 2}
+  nextCutscene: {fileID: 11400000, guid: 903a8cfec00c5dc4d9958108944b6118, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36be2c346a3c58946a757b6b1b115e63, type: 3}
-  m_Name: CS07_EndOfGame
+  m_Name: CS10_EndOfGame
   m_EditorClassIdentifier: 
   screens:
   - image: {fileID: 21300000, guid: f573881602b2b984c9bb4b8bb35f282c, type: 3}

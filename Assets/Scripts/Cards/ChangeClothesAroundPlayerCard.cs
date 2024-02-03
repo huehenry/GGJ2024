@@ -40,17 +40,30 @@ public class ChangeClothesAroundPlayerCard : Card
         // get person behind player's position
         behindPosition = playerPosition + 1;
 
-        // change shirt of person ahead
-        GameManager.instance.queueManager.currentQueue[aheadPosition].shirt = GameManager.instance.queueManager.currentQueue[playerPosition].shirt;
-        // change shirt of person behind
-        GameManager.instance.queueManager.currentQueue[behindPosition].shirt = GameManager.instance.queueManager.currentQueue[playerPosition].shirt;
+        if (aheadPosition < GameManager.instance.queueManager.currentQueue.Count && behindPosition >= 0)
+        {
+            // change shirt of person ahead
+            GameManager.instance.queueManager.currentQueue[aheadPosition].shirt = GameManager.instance.queueManager.currentQueue[playerPosition].shirt;
+            // change shirt of person behind
+            GameManager.instance.queueManager.currentQueue[behindPosition].shirt = GameManager.instance.queueManager.currentQueue[playerPosition].shirt;
 
-        // i don't know if we want to do pants as well but i'll write it anyways
-        /*
-        // change pants of person ahead
-        GameManager.instance.queueManager.currentQueue[aheadPosition].pants = GameManager.instance.queueManager.currentQueue[playerPosition].pants;
-        // change pants of person behind
-        GameManager.instance.queueManager.currentQueue[behinddPosition].pants = GameManager.instance.queueManager.currentQueue[playerPosition].pants;
-        */
+            // i don't know if we want to do pants as well but i'll write it anyways
+
+            // change pants of person ahead
+            GameManager.instance.queueManager.currentQueue[aheadPosition].pants = GameManager.instance.queueManager.currentQueue[playerPosition].pants;
+            // change pants of person behind
+            GameManager.instance.queueManager.currentQueue[behindPosition].pants = GameManager.instance.queueManager.currentQueue[playerPosition].pants;
+
+            //Add them to the list for spinning
+            List<QueuePerson> spinMe = new List<QueuePerson>();
+            spinMe.Add(GameManager.instance.queueManager.currentQueue[aheadPosition]);
+            spinMe.Add(GameManager.instance.queueManager.currentQueue[behindPosition]);
+            GameManager.instance.queueManager.UpdateVisuals(spinMe);
+
+        }
+		else
+		{
+            //Fizzle
+		}
     }
 }

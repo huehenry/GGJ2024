@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4922755406205205390}
-  - component: {fileID: -6695932560272133924}
+  - component: {fileID: 6526449322410683724}
   m_Layer: 0
-  m_Name: SwapSameSize
+  m_Name: BlueMyself
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6695932560272133924
+--- !u!114 &6526449322410683724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067842687827311825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915b4a4e06e4c5d4e9c6452bf3c7bc70, type: 3}
+  m_Script: {fileID: 11500000, guid: 495b65180f6737247992c3a3fd9b4c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: a9c86901a2774e14192a701beab519c9, type: 3}
-  cardNameForVisual: Eye to Eye
+  cardSpriteForVisual: {fileID: 21300000, guid: 9723d8ba06d66f64cba4cfe50fbf7f19, type: 3}
+  cardNameForVisual: Just Blue Myself
