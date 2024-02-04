@@ -40,10 +40,10 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 8975ae2600ba420468434a6b05db537a, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 0.75
-  - image: {fileID: 21300000, guid: e068a0f67992e4f4fa8295a6d935e15e, type: 3}
-    soundClip: {fileID: 0}
-    timeOnScreen: 0.75
   - image: {fileID: 21300000, guid: 35875a8c8fa87ed4fa526cb3031dbee1, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 0.75
+  - image: {fileID: 21300000, guid: e068a0f67992e4f4fa8295a6d935e15e, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1
   levelToLoadWhenFinished: {fileID: 11400000, guid: e7a4f2b59dc1e1e458ebcc4e610c0433, type: 2}

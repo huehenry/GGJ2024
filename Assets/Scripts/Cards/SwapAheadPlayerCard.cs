@@ -37,6 +37,13 @@ public class SwapAheadPlayerCard : Card
         // get person ahead of player's position
         aheadPosition = playerPosition - 1;
         // swap player and person behind them
-        GameManager.instance.queueManager.Swap(playerPosition, aheadPosition);
+        if (aheadPosition >= 0)
+        {
+            GameManager.instance.queueManager.Swap(playerPosition, aheadPosition);
+		}
+		else
+		{
+            GameManager.instance.queueManager.Fizzle();
+        }
     }
 }

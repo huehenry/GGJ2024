@@ -13,22 +13,21 @@ MonoBehaviour:
   m_Name: Level6
   m_EditorClassIdentifier: 
   queue:
-  - {fileID: 11400000, guid: f61aafb74891dd247ae0689184c1f90b, type: 2}
-  - {fileID: 11400000, guid: e7ec9db3233b30c42b64216840dd0c9d, type: 2}
+  - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
+  - {fileID: 11400000, guid: 2b0d686d5f541e04a86965875a2217aa, type: 2}
+  - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
+  - {fileID: 11400000, guid: a1256706af64f464893e0118d54ea381, type: 2}
+  - {fileID: 11400000, guid: a1256706af64f464893e0118d54ea381, type: 2}
+  - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
+  - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
+  - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
   - {fileID: 11400000, guid: 8a630aa4e38a02a4e81398a00ae51ee4, type: 2}
-  - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
-  - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
-  - {fileID: 11400000, guid: 78037e59a8c15ad4d8ec9c0b958e7cd9, type: 2}
-  - {fileID: 11400000, guid: 78037e59a8c15ad4d8ec9c0b958e7cd9, type: 2}
-  - {fileID: 11400000, guid: c89849f2e090f594da7d5aae0f1bbd37, type: 2}
-  - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
   CardList:
-  - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
+  - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
+  - {fileID: 2433032451637945891, guid: b39abf60b90ba0c4bbd699010e8fa1a2, type: 3}
+  - {fileID: 8062952275021569664, guid: 299d9d902a5220d44b8318610619fe73, type: 3}
   backgroundSceneFilename: LevelGreyWallOfficeAlt
-  trapdoors: 00000000000000000000
+  trapdoors: 01000100010000000100
   nextCutscene: {fileID: 11400000, guid: 445f3744a8646234a851d379a537d335, type: 2}

@@ -25,6 +25,13 @@ public class QueueManager : MonoBehaviour
     //Used to delete and rejoin
     private List<QueuePerson> tempList;
 
+    private class CandyCrushList
+	{
+        public QueuePerson one;
+        public QueuePerson two;
+        public QueuePerson three;
+    }
+
     public enum actionStates
 	{
         waiting,
@@ -563,6 +570,149 @@ public class QueueManager : MonoBehaviour
         //Put us in the state to spin people
         timer = 0;
         currentState = actionStates.changingProperty;
+	}
+
+
+    public List<QueuePerson> CandyCrushMe()
+	{
+        List<QueuePerson> returner = new List<QueuePerson>();
+        //Lists of matches
+        List<CandyCrushList> currentMatches = new List<CandyCrushList>();
+        //Find any groups of three
+        for (int i = 0; i <= currentQueue.Count - 3; i++)
+		{
+            bool shirtsMatch = true;
+            bool pantsMatch = true;
+            if(currentQueue[i].shirt == currentQueue[i+1].shirt && currentQueue[i].shirt == currentQueue[i+2].shirt)
+			{
+                //Make sure there isn't one before or after of the same type
+                if(i>0)
+				{
+                    //Check the one before if possible
+                    if(currentQueue[i-1].shirt == currentQueue[i].shirt)
+					{
+                        shirtsMatch = false;
+					}                        
+				}
+                if(i < currentQueue.Count - 3)
+				{
+                    //Check the one after if possible
+                    if (currentQueue[i + 3].shirt == currentQueue[i].shirt)
+                    {
+                        shirtsMatch = false;
+                    }
+                }
+			}
+			else
+			{
+                shirtsMatch = false;
+			}
+            //Do the same with pants
+            if (currentQueue[i].pants == currentQueue[i + 1].pants && currentQueue[i].pants == currentQueue[i + 2].pants)
+            {
+                //Make sure there isn't one before or after of the same type
+                if (i > 0)
+                {
+                    //Check the one before if possible
+                    if (currentQueue[i - 1].pants == currentQueue[i].pants)
+                    {
+                        pantsMatch = false;
+                    }
+                }
+                if (i < currentQueue.Count - 3)
+                {
+                    //Check the one after if possible
+                    if (currentQueue[i + 3].pants == currentQueue[i].pants)
+                    {
+                        pantsMatch = false;
+                    }
+                }
+            }
+            else
+            {
+                pantsMatch = false;
+            }
+            if(shirtsMatch==true || pantsMatch == true)
+			{
+                //Add this list.
+                CandyCrushList matches = new CandyCrushList();
+                matches.one = currentQueue[i];
+                matches.two = currentQueue[i+1];
+                matches.three = currentQueue[i+2];
+                currentMatches.Add(matches);
+            }
+        }
+        Debug.Log("NUMBER OF MATCHES:");
+        Debug.Log(currentMatches.Count);
+        //Now we have a bunch of candy crush matches.
+        //Create a list of  ones not to use
+        List<QueuePerson> dontCrush = new List<QueuePerson>();
+        //If it contains something that another one contains remove both of their contents.
+        for(int i = 0; i < currentMatches.Count-1; i++)
+		{
+            for(int beginWithThisIndex = i+1; beginWithThisIndex < currentMatches.Count; beginWithThisIndex++)
+			{
+                //Start with the one we're on. Compare it only to the ones after it, since the ones before it will already have been compared to it.
+                if(currentMatches[i].one == currentMatches[beginWithThisIndex].two || currentMatches[i].one == currentMatches[beginWithThisIndex].three)
+				{
+                    //Remove them all.
+                    dontCrush.Add(currentMatches[i].one);
+                    dontCrush.Add(currentMatches[i].two);
+                    dontCrush.Add(currentMatches[i].three);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].one);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].two);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].three);
+                }
+                //Compare two to one and three.
+                if (currentMatches[i].two == currentMatches[beginWithThisIndex].one || currentMatches[i].two == currentMatches[beginWithThisIndex].three)
+                {
+                    //Remove them all.
+                    dontCrush.Add(currentMatches[i].one);
+                    dontCrush.Add(currentMatches[i].two);
+                    dontCrush.Add(currentMatches[i].three);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].one);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].two);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].three);
+                }
+                //Compare three to one and two.
+                if (currentMatches[i].three == currentMatches[beginWithThisIndex].one || currentMatches[i].three == currentMatches[beginWithThisIndex].two)
+                {
+                    //Remove them all.
+                    dontCrush.Add(currentMatches[i].one);
+                    dontCrush.Add(currentMatches[i].two);
+                    dontCrush.Add(currentMatches[i].three);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].one);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].two);
+                    dontCrush.Add(currentMatches[beginWithThisIndex].three);
+                }
+            }
+		}
+        //Now we have a list of matches, with people in them, and then a dontcrush list
+        //Use them to return the list
+        for (int i = 0; i < currentMatches.Count; i++)
+        {
+            if (!returner.Contains(currentMatches[i].one))
+            {
+                returner.Add(currentMatches[i].one);
+            }
+            if (!returner.Contains(currentMatches[i].two))
+            {
+                returner.Add(currentMatches[i].two);
+            }
+            if (!returner.Contains(currentMatches[i].three))
+            {
+                returner.Add(currentMatches[i].three);
+            }
+        }
+        //Remove the dontcrushes
+        for(int i = 0; i < dontCrush.Count; i++)
+		{
+            if(returner.Contains(dontCrush[i]))
+			{
+                returner.Remove(dontCrush[i]);
+			}
+		}
+        return returner;
 	}
 
 }

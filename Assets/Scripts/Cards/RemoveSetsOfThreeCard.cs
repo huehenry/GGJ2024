@@ -15,8 +15,17 @@ public class RemoveSetsOfThreeCard : Card
         removeThese = new List<QueuePerson>();
         // get all sets of 3 consecutive same shirt colors
         // add them to removeThese
-
+        removeThese = GameManager.instance.queueManager.CandyCrushMe();
         // remove them from queue
-        GameManager.instance.queueManager.Deletion(removeThese);
+        if(removeThese.Count>0)
+		{
+            GameManager.instance.queueManager.Deletion(removeThese);
+
+        }
+        else
+		{
+            GameManager.instance.queueManager.Fizzle();
+
+        }
     }
 }
