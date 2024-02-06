@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915b4a4e06e4c5d4e9c6452bf3c7bc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: a9c86901a2774e14192a701beab519c9, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: 6eebd00cb90a58c4b9bd107d70013902, type: 3}
   cardNameForVisual: Eye to Eye

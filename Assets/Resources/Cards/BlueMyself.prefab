@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495b65180f6737247992c3a3fd9b4c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 9723d8ba06d66f64cba4cfe50fbf7f19, type: 3}
+  cardSpriteForVisual: {fileID: 21300000, guid: 0c39011636734ef4881233b0cca2496e, type: 3}
   cardNameForVisual: Just Blue Myself

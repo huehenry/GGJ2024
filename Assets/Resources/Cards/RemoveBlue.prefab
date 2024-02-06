@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7b870031b667648ad98672201d167b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: 40b717399c250fc4884e1748ae3b9f98, type: 3}
-  cardNameForVisual: Blue 'Em Away
+  cardSpriteForVisual: {fileID: 21300000, guid: 261a5e86daa79bd4884669692922bfa1, type: 3}
+  cardNameForVisual: Antidepressants
   removeThese:
   - {fileID: 0}
   - {fileID: 0}

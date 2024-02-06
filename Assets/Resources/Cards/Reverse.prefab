@@ -45,5 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSpriteForVisual: {fileID: 21300000, guid: d1307614de264134ca5d47ee652334f3, type: 3}
-  cardNameForVisual: Play the Reverse Card
-  removeThese: []
+  cardNameForVisual: Reverse Card
+  removeThese:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

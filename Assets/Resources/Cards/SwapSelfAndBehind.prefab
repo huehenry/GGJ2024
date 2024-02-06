@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b456f6270abeebe42821d9a8a1464d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: f0c0cece08b0a28479cc10d176dbf684, type: 3}
-  cardNameForVisual: No, I Insist
+  cardSpriteForVisual: {fileID: 21300000, guid: 1b52156c3c1965a478490cc95eea7665, type: 3}
+  cardNameForVisual: M'Lady

@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelBrownWallSecurity.unity
     guid: 3959e0cecb51bfe4893412d070d40795
+  - enabled: 1
+    path: Assets/Scenes/LevelOutside_Start.unity
+    guid: 7cf50a44015a3fe45a412dcabf0357e8
   m_configObjects: {}

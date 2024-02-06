@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36be2c346a3c58946a757b6b1b115e63, type: 3}
+  m_Name: Jeremy_Outside
+  m_EditorClassIdentifier: 
+  screens:
+  - image: {fileID: 21300000, guid: 45f19b57c7048a54685d7eb7ffe23faa, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1.5
+  - image: {fileID: 21300000, guid: 6d6bda0bfa3885e42bfb93ecedb7abca, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1.5
+  - image: {fileID: 21300000, guid: 21f6434179c77594198f51757b827df8, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1.5
+  - image: {fileID: 21300000, guid: e6490c703e85f544db363b361d4493c4, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 1
+  - image: {fileID: 21300000, guid: 1ae0d9b6b89df80418bf0ed26192d99d, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 0.5
+  - image: {fileID: 21300000, guid: add14e8437d0b694d9cd4e3a8532b4d7, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  levelToLoadWhenFinished: {fileID: 11400000, guid: 81934946bedb27e44b6916180d6d844c, type: 2}

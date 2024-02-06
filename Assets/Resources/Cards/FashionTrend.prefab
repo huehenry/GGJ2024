@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e976ee6e63063064391010eb563335df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpriteForVisual: {fileID: 21300000, guid: a9c86901a2774e14192a701beab519c9, type: 3}
-  cardNameForVisual: Fashion Trend
+  cardSpriteForVisual: {fileID: 21300000, guid: 8fd68e9e3a7a46f49b0cc53412c9a347, type: 3}
+  cardNameForVisual: Who Wore it Better?
