@@ -28,4 +28,4 @@ MonoBehaviour:
   - {fileID: 8322574693682439416, guid: 5fe68d3bc3bb7f446b717fd3b064f06f, type: 3}
   backgroundSceneFilename: LevelBrownWallOffice
   trapdoors: 0100010100000100
-  nextCutscene: {fileID: 11400000, guid: 5c274e5e1d3727442b12a29782225d4c, type: 2}
+  nextCutscene: {fileID: 11400000, guid: 436f6d01f3a24864c8558a3734e19324, type: 2}

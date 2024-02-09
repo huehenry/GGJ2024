@@ -45,5 +45,8 @@ MonoBehaviour:
     timeOnScreen: 1.5
   - image: {fileID: 21300000, guid: e068a0f67992e4f4fa8295a6d935e15e, type: 3}
     soundClip: {fileID: 0}
+    timeOnScreen: 4
+  - image: {fileID: 21300000, guid: 890f792d7232c5049b0d63722fb31e08, type: 3}
+    soundClip: {fileID: 0}
     timeOnScreen: 2
   levelToLoadWhenFinished: {fileID: 11400000, guid: e7a4f2b59dc1e1e458ebcc4e610c0433, type: 2}

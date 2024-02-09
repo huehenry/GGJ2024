@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36be2c346a3c58946a757b6b1b115e63, type: 3}
+  m_Name: Jeremy_Printer
+  m_EditorClassIdentifier: 
+  screens:
+  - image: {fileID: 21300000, guid: bbc444c07564c0340a4084662940ec89, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 4.5
+  - image: {fileID: 21300000, guid: e8bfeb0295c4fe545935f995ea51691d, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 4.5
+  - image: {fileID: 21300000, guid: 34a7a197634f3f844a88b79086be89ba, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 4.5
+  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 2
+  levelToLoadWhenFinished: {fileID: 11400000, guid: debda6067d4deab4c95b61445df989a7, type: 2}

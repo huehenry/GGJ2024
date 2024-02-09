@@ -31,4 +31,4 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 9c4e9a0bf074ee546b17a8a77867e70e, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
-  levelToLoadWhenFinished: {fileID: 11400000, guid: dc2347741cbb80846b6d7432d36a12c8, type: 2}
+  levelToLoadWhenFinished: {fileID: 11400000, guid: 7e05bf01df17c1948b99e07a6faec5cf, type: 2}

@@ -31,4 +31,4 @@ MonoBehaviour:
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   backgroundSceneFilename: LevelGreyWallOfficeEscalator
   trapdoors: 00000000000000000000
-  nextCutscene: {fileID: 11400000, guid: d4902fcb4992cf84faf288971441f9ce, type: 2}
+  nextCutscene: {fileID: 11400000, guid: eccfa5bc730ad4343b80e4a237827bdb, type: 2}
