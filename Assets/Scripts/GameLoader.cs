@@ -60,6 +60,8 @@ public class GameLoader : MonoBehaviour
         //JEREMY: Gonna do this with a list
         List<QueuePerson> personList = new List<QueuePerson>();
 
+
+
         if (GameManager.instance == null)
         {
             Debug.LogError("ERROR: NO GAME MANAGER LOADED");
@@ -86,6 +88,11 @@ public class GameLoader : MonoBehaviour
 
             }
             GameManager.instance.queueManager.LoadNewQueue(personList, levelData.trapdoors);
+            //Set lastlevel
+            if (levelData.finalLevel == true)
+            {
+                GameManager.instance.queueManager.lastLevel = true;
+            }
         }
         yield return null;
     }

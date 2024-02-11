@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: CS08_GenericProceed
   m_EditorClassIdentifier: 
   screens:
-  - image: {fileID: 21300000, guid: 71efb499fc231cd4ab00e688b67fc928, type: 3}
+  - image: {fileID: 21300000, guid: 48a5e6a9f2d160748ba2d2686ab26475, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 5
+  - image: {fileID: 21300000, guid: db58064ddcc9d084ab93b82c065e9ca3, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 5
+  - image: {fileID: 21300000, guid: 33e77546aa563144ea17bea1971eacd8, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 5
+  - image: {fileID: 21300000, guid: 9cb01308f951a194593610bab3754bec, type: 3}
+    soundClip: {fileID: 0}
+    timeOnScreen: 5
   levelToLoadWhenFinished: {fileID: 11400000, guid: eb2cb792df63466428b294b0f5c5e041, type: 2}

@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] fizzleCard;
     public AudioClip[] victory;
     public AudioClip[] wilheilm;
+    public AudioClip[] spin;
+    public AudioClip luda;
     public List<AudioClip> grumbles;
 
     private void Awake()
@@ -38,6 +40,11 @@ public class AudioManager : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(grumbles[Random.Range(0,grumbles.Count)], Camera.main.transform.position);
         }
+    }
+
+    public void ludaMove()
+	{
+        AudioSource.PlayClipAtPoint(luda, Camera.main.transform.position);
     }
 
 }

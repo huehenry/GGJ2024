@@ -34,7 +34,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 2eed08aaa2b4eb249addfb8fbf7573d0, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 3
-  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
+  - image: {fileID: 21300000, guid: 48e49e2336754a04888e4cdddb55969e, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 1
   - image: {fileID: 21300000, guid: 8975ae2600ba420468434a6b05db537a, type: 3}
@@ -46,7 +46,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: e068a0f67992e4f4fa8295a6d935e15e, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 4
-  - image: {fileID: 21300000, guid: 890f792d7232c5049b0d63722fb31e08, type: 3}
+  - image: {fileID: 21300000, guid: 614a57c750fab1041831de75b95d3d69, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   levelToLoadWhenFinished: {fileID: 11400000, guid: e7a4f2b59dc1e1e458ebcc4e610c0433, type: 2}

@@ -15,20 +15,20 @@ MonoBehaviour:
   screens:
   - image: {fileID: 21300000, guid: e04b42881d50bfd4aae4efadc8d11b5c, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: c4155e2a4409fa74487aca251f0b62fb, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: 9bbfe33a4e772db4da908ab3f8368eb1, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: 439250e1dcd44894fbca32cc1a2602f4, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: b319a791f3224f04fb386d80b98d88aa, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
-  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
+    timeOnScreen: 4.5
+  - image: {fileID: 21300000, guid: dd0bbe250be765749abda8ba0c7c0fa9, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 2
   levelToLoadWhenFinished: {fileID: 11400000, guid: dc2347741cbb80846b6d7432d36a12c8, type: 2}

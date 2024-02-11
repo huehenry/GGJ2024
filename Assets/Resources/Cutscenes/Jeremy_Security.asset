@@ -15,14 +15,14 @@ MonoBehaviour:
   screens:
   - image: {fileID: 21300000, guid: c75d4938073461d4aaf0342d9eda68a2, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: c00918564442d5847af71f21a810d252, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
+    timeOnScreen: 4.5
   - image: {fileID: 21300000, guid: 1f17ba3ce463d7943b7829c3d5f16886, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 3
-  - image: {fileID: 21300000, guid: aea8b1ca72dfcd24c992ad5306216e52, type: 3}
+    timeOnScreen: 4.5
+  - image: {fileID: 21300000, guid: 982ed006b8e4e1e4e887f0a1ede6cd7a, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   levelToLoadWhenFinished: {fileID: 11400000, guid: 2cfdd90df45dd11419d206055b83d214, type: 2}

@@ -10,6 +10,8 @@ public class UI_CardInventory : MonoBehaviour
     public bool DEBUG;
     public Card[] debugCards;
 
+    public Image loadingScreen;
+
     public GameObject resetButton;
 
     public static UI_CardInventory _cardInventory;
@@ -42,6 +44,9 @@ public class UI_CardInventory : MonoBehaviour
     public float leftArcLimit = -5;
     public float rightArcLimit = 5;
 
+    //Used for end.
+    public Vector3 cameraPosStart;
+
     private float animationLerper;
 
     //Hacky but its a jam
@@ -52,13 +57,16 @@ public class UI_CardInventory : MonoBehaviour
     public states cardInventoryStates;
     public enum states
 	{
+        waiting,
         oldLevelReset,
         newLevelReplace,
         bringBackCards,
         readyToPlayACard,
         waitingForCardToResolve,
         moveCardOffScreen,
-        fizzleCard
+        gameDoneCamera,
+        fizzleCard,
+        finished
 	}
 
     void Awake()
@@ -98,6 +106,7 @@ public class UI_CardInventory : MonoBehaviour
 
 	public void NewLevel(Card[] newLevelCards)
 	{
+        cameraPosStart = Camera.main.transform.localPosition;
         animationLerper = 0;
         cardInventoryStates = states.oldLevelReset;
         currentLevelCardInventory = new List<Card>();
@@ -137,8 +146,12 @@ public class UI_CardInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(cardInventoryStates)
+        if(cardInventoryStates != states.waiting)
 		{
+            loadingScreen.color = Color.Lerp(loadingScreen.color, new Color(1, 1, 1, 0), Time.deltaTime * 3);
+        }
+        switch (cardInventoryStates)
+        {
             case states.oldLevelReset:
                 foreach (RectTransform r in buttonObjects)
                 {
@@ -149,15 +162,15 @@ public class UI_CardInventory : MonoBehaviour
                 break;
             case states.newLevelReplace:
                 //Now replace the cards with the new ones.
-                for(int i = 0; i < cardSprites.Length; i++)
-				{
-                    if(i < currentLevelCardInventory.Count)
-					{
+                for (int i = 0; i < cardSprites.Length; i++)
+                {
+                    if (i < currentLevelCardInventory.Count)
+                    {
                         cardSprites[i].sprite = currentLevelCardInventory[i].cardSpriteForVisual;
                         cardNames[i].text = currentLevelCardInventory[i].cardNameForVisual;
                     }
-					else
-					{
+                    else
+                    {
                         //Set it to an empty sprite. This is a quick and dirty way to know when a card is unused in a level so we don't load it.
                         cardSprites[i].sprite = emptySprite;
                         cardNames[i].text = "UNUSED";
@@ -166,34 +179,34 @@ public class UI_CardInventory : MonoBehaviour
                 cardInventoryStates = states.readyToPlayACard;
                 break;
             case states.readyToPlayACard:
-                if(resetButton.activeSelf == false)
-				{
-                    if(GameManager.instance.queueManager.currentQueue.Count>0)
-					{
+                if (resetButton.activeSelf == false)
+                {
+                    if (GameManager.instance.queueManager.currentQueue.Count > 0)
+                    {
                         bool tester = true;
-                        foreach(QueuePerson p in GameManager.instance.queueManager.currentQueue)
-						{
-                            if(p.move == true)
-							{
+                        foreach (QueuePerson p in GameManager.instance.queueManager.currentQueue)
+                        {
+                            if (p.move == true)
+                            {
                                 tester = false;
-                            }                                
-						}
-                        if(tester == true)
-						{
+                            }
+                        }
+                        if (tester == true)
+                        {
                             resetButton.SetActive(true);
-                        }                            
-					}
+                        }
+                    }
 
-				}
+                }
                 //Remaining cards always very quickly center themselves based on how many are left
                 int numCardsLeft = 0;
-                foreach(Image i in cardSprites)
-				{
-                    if(i.sprite!=emptySprite)
-					{
+                foreach (Image i in cardSprites)
+                {
+                    if (i.sprite != emptySprite)
+                    {
                         numCardsLeft += 1;
-					}
-				}
+                    }
+                }
                 //Find the positions by splitting the arc and width by number left.
                 float xSplit = rightLimit - leftLimit;
                 //An attempt to make it work nicer with fewer and more cards
@@ -206,103 +219,128 @@ public class UI_CardInventory : MonoBehaviour
 
                 //This allows me to put the correct cards at the right targets;
                 int cardCounter = 1;
-                for(int i = 0; i < cardSprites.Length; i++)
-				{
-                    if(cardSprites[i].sprite!=emptySprite && i!=thisCardWasPlayed)
-					{
+                for (int i = 0; i < cardSprites.Length; i++)
+                {
+                    if (cardSprites[i].sprite != emptySprite && i != thisCardWasPlayed)
+                    {
                         //This card is still in use
-                        cardPositions[i] = new Vector2((cardCounter) * xSplit + leftLimit -testSpread/2, 0);
+                        cardPositions[i] = new Vector2((cardCounter) * xSplit + leftLimit - testSpread / 2, 0);
                         //Gonna activate it here as well?
                         buttonsForDisabling[i].interactable = true;
                         //HAVE TO INVERSE ROTATION
-                        cardRotations[i] = Quaternion.Euler(0, 0, (arcSplit * (cardCounter) + leftArcLimit)*-1);
+                        cardRotations[i] = Quaternion.Euler(0, 0, (arcSplit * (cardCounter) + leftArcLimit) * -1);
                         cardCounter += 1;
-					}
-					else
-					{
+                    }
+                    else
+                    {
                         cardPositions[i] = new Vector2(0, heightUsed);
                         cardRotations[i] = Quaternion.Euler(0, 0, 0);
                         buttonsForDisabling[i].interactable = false;
                     }
-				}
+                }
                 //SEND CARDS TO THEIR TARGETS
-                for(int i = 0; i < cardPositions.Length; i++)
-				{
-                    buttonObjects[i].anchoredPosition = Vector2.Lerp(buttonObjects[i].anchoredPosition, cardPositions[i], 3*Time.deltaTime);
+                for (int i = 0; i < cardPositions.Length; i++)
+                {
+                    buttonObjects[i].anchoredPosition = Vector2.Lerp(buttonObjects[i].anchoredPosition, cardPositions[i], 3 * Time.deltaTime);
                     buttonObjects[i].localRotation = Quaternion.Lerp(buttonObjects[i].localRotation, cardRotations[i], 3 * Time.deltaTime);
-				}
+                }
 
                 //Any card that's highighted has the visual (separate from the button) move up and to the middle. The rest move down. If there's more than one, throw a warning to figure out why
                 bool foundIt = false;
-                for(int i = 0; i < currentlyHighlighting.Length; i++)
-				{
-                    if(currentlyHighlighting[i] == true)
-					{
+                for (int i = 0; i < currentlyHighlighting.Length; i++)
+                {
+                    if (currentlyHighlighting[i] == true)
+                    {
                         if (foundIt == false)
                         {
                             foundIt = true;
-						}
-						else
-						{
+                        }
+                        else
+                        {
                             Debug.LogError("More than one card is selected??");
-						}
+                        }
                         cardVisuals[i].anchoredPosition = new Vector2(0, heightHighlight);
                         cardVisuals[i].localScale = new Vector3(scaleFactorHighlight, scaleFactorHighlight, scaleFactorHighlight);
-					}
-					else
-					{
+                    }
+                    else
+                    {
                         cardVisuals[i].anchoredPosition = new Vector2(0, 0);
                         cardVisuals[i].localScale = Vector3.one;
-					}
-				}
+                    }
+                }
                 break;
             case states.waitingForCardToResolve:
                 //A card was clicked. Don't let the player click another card until whatever has happened.
-                foreach(Button b in buttonsForDisabling)
-				{
+                foreach (Button b in buttonsForDisabling)
+                {
                     b.interactable = false;
-				}
+                }
                 break;
             case states.moveCardOffScreen:
                 //The card is resolved. Drop the visual AND the collision away.
-                animationLerper += Time.deltaTime*3;
+                animationLerper += Time.deltaTime * 3;
                 float stepLerper = Mathf.SmoothStep(0, 1, animationLerper);
-                if (thisCardWasPlayed!=-1)
-				{
+                if (thisCardWasPlayed != -1)
+                {
                     cardPositions[thisCardWasPlayed] = new Vector2(0, heightUsed);
                     cardRotations[thisCardWasPlayed] = Quaternion.Euler(0, 0, 0);
                     buttonObjects[thisCardWasPlayed].anchoredPosition = Vector2.Lerp(cardPlayedPos, cardPositions[thisCardWasPlayed], stepLerper);
                 }
                 //Once lerper is done, set its image and name and then restart
-                if (animationLerper>1)
-				{
+                if (animationLerper > 1)
+                {
                     cardSprites[thisCardWasPlayed].sprite = emptySprite;
                     cardNames[thisCardWasPlayed].text = "UNUSED";
                     animationLerper = 0;
                     cardInventoryStates = states.readyToPlayACard;
                     thisCardWasPlayed = -1;
                     //CHECK FOR WIN HERE.
-                    if(GameManager.instance.queueManager.checkForWin() == true)
-					{
+                    if (GameManager.instance.queueManager.checkForWin() == true)
+                    {
                         // Play victory jingle
                         if (AudioManager._audioManager != null)
                         {
                             AudioManager._audioManager.PlaySound(AudioManager._audioManager.victory);
                         }
 
-
-                        CutsceneManager._cutsceneManager.PlayCutsceneThenLoadLevel(GameLoader.instance.currentLevel.nextCutscene);
+                        //If last level do special thing here.
+                        if (GameManager.instance.queueManager.lastLevel == true)
+                        {
+                            cardInventoryStates = states.gameDoneCamera;
+                            animationLerper = 0;
+                        }
+                        else
+                        {
+                            loadingScreen.color = Color.white;
+                            cardInventoryStates = states.waiting;
+                            CutsceneManager._cutsceneManager.PlayCutsceneThenLoadLevel(GameLoader.instance.currentLevel.nextCutscene);
+                        }
                     }
                 }
                 break;
             case states.fizzleCard:
                 cardSprites[thisCardWasPlayed].transform.localScale = Vector3.MoveTowards(cardSprites[thisCardWasPlayed].transform.localScale, Vector3.zero, Time.deltaTime);
-                if(cardSprites[thisCardWasPlayed].transform.localScale == Vector3.zero)
-				{
+                if (cardSprites[thisCardWasPlayed].transform.localScale == Vector3.zero)
+                {
                     cardInventoryStates = states.moveCardOffScreen;
-				}
+                }
                 break;
-
+            case states.gameDoneCamera:
+                animationLerper += Time.deltaTime;
+                if (animationLerper <= 3)
+                {
+                    float smoother = Mathf.SmoothStep(0, 1, animationLerper/2);
+                    Vector3 target = cameraPosStart;
+                    target.x += 6;
+                    Camera.main.transform.localPosition = Vector3.Lerp(cameraPosStart, target, smoother);
+				}
+				else
+				{
+                    //When done
+                    CutsceneManager._cutsceneManager.PlayCutsceneThenLoadLevel(GameLoader.instance.currentLevel.nextCutscene);
+                    cardInventoryStates = states.finished;
+                }
+                break;
 		}
     }
 

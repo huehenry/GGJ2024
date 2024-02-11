@@ -33,3 +33,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelPartyRoom
   trapdoors: 00010000010100000000
   nextCutscene: {fileID: 11400000, guid: 219f6058755b518428bd5dd76f41fdaa, type: 2}
+  finalLevel: 1

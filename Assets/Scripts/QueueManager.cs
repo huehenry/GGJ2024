@@ -17,6 +17,9 @@ public class QueueManager : MonoBehaviour
     public float spinSpeed;
     private float timer;
     private int stagger;
+    private bool trapdoor = false;
+
+    public bool lastLevel = false;
 
     //These are used to swap
     private QueuePerson swap1;
@@ -237,10 +240,17 @@ public class QueueManager : MonoBehaviour
                 }
                 if (timer > 1)
                 {
-                    foreach (QueuePerson person in tempList)
+                    /*foreach (QueuePerson person in tempList)
                     {
                         person.transform.localPosition = new Vector3(-20, 0.5f, person.transform.localPosition.z);
-                    }
+                    }*/
+                    //TEST
+                    for(int i = 0; i < tempList.Count; i++)
+					{
+
+					}
+
+
                     RecalculatePositionsAfterDelete();
                     timer = 0;
                 }
@@ -292,7 +302,7 @@ public class QueueManager : MonoBehaviour
                 }
                 break;
             case actionStates.changingProperty:
-                    timer += Time.deltaTime;
+                    timer += Time.deltaTime*1.5f;
                     foreach (QueuePerson spinMe in tempList)
                     {
                         Quaternion targetRot = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, spinMe.transform.localRotation.eulerAngles.y + 45.0f, spinMe.transform.localRotation.eulerAngles.z);
@@ -308,7 +318,7 @@ public class QueueManager : MonoBehaviour
                     }
                 break;
             case actionStates.stopSpinning:
-                timer -= Time.deltaTime;
+                timer -= Time.deltaTime * 1.5f;
                 foreach (QueuePerson spinMe in tempList)
                 {
                     Quaternion targetRot = Quaternion.Euler(spinMe.transform.localRotation.eulerAngles.x, spinMe.transform.localRotation.eulerAngles.y + 45.0f, spinMe.transform.localRotation.eulerAngles.z);
@@ -343,6 +353,27 @@ public class QueueManager : MonoBehaviour
         if (AudioManager._audioManager != null)
         {
             AudioManager._audioManager.PlayRandomGrumble();
+        }
+
+        swap1 = currentQueue[index1];
+        swap2 = currentQueue[index2];
+        Vector3 temp = swap2.currentTargetPos;
+        swap2.currentTargetPos = swap1.currentTargetPos;
+        swap1.currentTargetPos = temp;
+        swap1.move = true;
+        swap2.move = true;
+        swap1.moveSpeed = swapSpeed;
+        swap2.moveSpeed = swapSpeed;
+        currentQueue[index1] = swap2;
+        currentQueue[index2] = swap1;
+        currentState = actionStates.swapping;
+    }
+
+    public void LudaSwap(int index1, int index2)
+    {
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.ludaMove();
         }
 
         swap1 = currentQueue[index1];
@@ -419,7 +450,7 @@ public class QueueManager : MonoBehaviour
 
     public void TrapDoor(List<QueuePerson> removeThese)
     {
-
+        trapdoor = true;
         if (AudioManager._audioManager != null)
         {
             AudioManager._audioManager.PlaySound(AudioManager._audioManager.wilheilm);
@@ -462,12 +493,20 @@ public class QueueManager : MonoBehaviour
         //Give the stragglers their new position. We can do this to everyone and it won't be a problem since people in the queue already are already in place.
         for (int i = 0; i < currentQueue.Count; i++)
         {
+
             currentQueue[i].currentTargetPos = spawnPositions[i].localPosition + (Vector3.up * currentQueue[i].yOffset);
             currentQueue[i].moveSpeed = moveSpeed;
+            if (trapdoor == true && tempList.Contains(currentQueue[i]))
+            {
+                Vector3 fall = currentQueue[i].currentTargetPos;
+                fall.y += 10;
+                currentQueue[i].transform.localPosition = fall;
+            }
         }
         //Now we will bring them in.
         stagger = 0;
         timer = 0;
+        trapdoor = false;
         currentState = actionStates.repopulate;
     }
 
@@ -566,6 +605,10 @@ public class QueueManager : MonoBehaviour
 
     public void UpdateVisuals(List<QueuePerson> affectThese)
 	{
+        if (AudioManager._audioManager != null)
+        {
+            AudioManager._audioManager.PlaySound(AudioManager._audioManager.spin);
+        }
         tempList = affectThese;
         //Put us in the state to spin people
         timer = 0;

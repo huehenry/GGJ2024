@@ -12,4 +12,5 @@ public class LevelData : ScriptableObject
     public string backgroundSceneFilename;
     public List<bool> trapdoors;
     public Cutscene nextCutscene;
+    public bool finalLevel = false;
 }

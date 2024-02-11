@@ -25,9 +25,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
   CardList:
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
-  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
   - {fileID: 3933413876440718997, guid: 194e2dfc31a185842ac51e01e27a7c6c, type: 3}
+  - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
   backgroundSceneFilename: LevelEscalatorLobby
   trapdoors: 00000001000001000100
   nextCutscene: {fileID: 11400000, guid: 50160935807e37b4db7a87722c2a9fbc, type: 2}
