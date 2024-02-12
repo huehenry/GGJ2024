@@ -15,7 +15,7 @@ MonoBehaviour:
   screens:
   - image: {fileID: 21300000, guid: 48a5e6a9f2d160748ba2d2686ab26475, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 5
+    timeOnScreen: 6.5
   - image: {fileID: 21300000, guid: db58064ddcc9d084ab93b82c065e9ca3, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 5

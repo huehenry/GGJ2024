@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelData : ScriptableObject
 {
     public List<QueuePersonData> queue;
+    public string levelName;
     public List<Card> CardList;
     public string backgroundSceneFilename;
     public List<bool> trapdoors;

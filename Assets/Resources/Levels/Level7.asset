@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
   - {fileID: 11400000, guid: 2561ec0ee5dc0f34c82ba4a1892df884, type: 2}
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
+  levelName: LEVEL 8
   CardList:
   - {fileID: 6526449322410683724, guid: 8403346e7014d1e44a9d61d8a4f18ed0, type: 3}
   - {fileID: -9057153931154839972, guid: decd458a2462866408d80f4cf2472a48, type: 3}
@@ -31,3 +32,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelBrownWallOfficeAlt
   trapdoors: 000000000000000000
   nextCutscene: {fileID: 11400000, guid: 641fe173d9a06474a9ca572710d300f0, type: 2}
+  finalLevel: 0

@@ -55,6 +55,7 @@ public class GameLoader : MonoBehaviour
             yield break;
         }
         UI_CardInventory._cardInventory.NewLevel(levelData.CardList.ToArray());
+        UI_CardInventory._cardInventory.levelText.text = levelData.levelName;
 
         // Now, make all the people
         //JEREMY: Gonna do this with a list

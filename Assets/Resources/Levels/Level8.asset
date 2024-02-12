@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3bc8619b9de2654caa32e5d2ca34f9d, type: 2}
   - {fileID: 11400000, guid: 2b0d686d5f541e04a86965875a2217aa, type: 2}
   - {fileID: 11400000, guid: 60bcf9beac7f19547a22207056f9e671, type: 2}
+  levelName: LEVEL 9
   CardList:
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
@@ -31,3 +32,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelEscalatorLobby
   trapdoors: 00000001000001000100
   nextCutscene: {fileID: 11400000, guid: 50160935807e37b4db7a87722c2a9fbc, type: 2}
+  finalLevel: 0

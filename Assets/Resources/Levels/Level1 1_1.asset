@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a21269dfba9589347bdbe40c3cd7ebbe, type: 2}
   - {fileID: 11400000, guid: 4dca02d39a7fc8647bf83f668f2319e7, type: 2}
   - {fileID: 11400000, guid: 1b943734f154c4743ae4495ceb2330cf, type: 2}
+  levelName: LEVEL 2
   CardList:
   - {fileID: -6699681724062847724, guid: e5a85a07cc29d424a95b2ff25f1005d6, type: 3}
   - {fileID: 6544226127247794430, guid: 89b127f2619737c4d87a2f060e4661ff, type: 3}
@@ -28,3 +29,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelOutside
   trapdoors: 00000000000000
   nextCutscene: {fileID: 11400000, guid: a0903245ac5d65c4ebcf834966c770ef, type: 2}
+  finalLevel: 0

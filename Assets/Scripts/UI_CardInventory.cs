@@ -10,6 +10,8 @@ public class UI_CardInventory : MonoBehaviour
     public bool DEBUG;
     public Card[] debugCards;
 
+    public TMP_Text levelText;
+
     public Image loadingScreen;
 
     public GameObject resetButton;

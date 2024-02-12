@@ -23,12 +23,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0dd079227925e2344868256709f7d509, type: 2}
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
   - {fileID: 11400000, guid: 288b151cd83c74243a31c0dc16e71cea, type: 2}
+  levelName: LEVEL 7
   CardList:
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   - {fileID: 1621824547012948103, guid: eacb05e17a3fd4f47aa0293e7a655d87, type: 3}
   - {fileID: 6544226127247794430, guid: 89b127f2619737c4d87a2f060e4661ff, type: 3}
   - {fileID: 2658773958826448076, guid: 559716e365a9e3d4986ec2e29c7708b5, type: 3}
-  - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   backgroundSceneFilename: LevelGreyWallOfficeAlt
   trapdoors: 00000000000000000000
   nextCutscene: {fileID: 11400000, guid: 445f3744a8646234a851d379a537d335, type: 2}
+  finalLevel: 0

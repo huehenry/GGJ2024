@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fda7316351175c94bb2aa42cb8fb85c6, type: 2}
   - {fileID: 11400000, guid: 9bd7eae2a130b2041bc02554c3071eca, type: 2}
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
+  levelName: LEVEL 4
   CardList:
   - {fileID: -5664075201377738397, guid: 695aaedcfa4b86648ad635d3cfaa398c, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
@@ -26,3 +27,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelBrownWallSecurity
   trapdoors: 010000000100
   nextCutscene: {fileID: 11400000, guid: 745255cdf45ca1a4f9bb09c0806b4f97, type: 2}
+  finalLevel: 0

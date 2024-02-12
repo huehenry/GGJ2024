@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screens:
   - image: {fileID: 21300000, guid: e3dc92b151edb634cb6d7743c38843e7, type: 3}
-    soundClip: {fileID: 0}
+    soundClip: {fileID: 8300000, guid: 35b6d827d1b3f9240b10f9aa092cf3b1, type: 3}
     timeOnScreen: 1.5
   - image: {fileID: 21300000, guid: 13a1e30702fca3345b32733669f9a95b, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 9e2504dbdad4048448aa70ba057fe4e7, type: 3}
-    soundClip: {fileID: 0}
+    soundClip: {fileID: 8300000, guid: 35b6d827d1b3f9240b10f9aa092cf3b1, type: 3}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 0f0b31ef557deb3489175c1ec3955840, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: 2eea9a627e3b58b439f5173ba5440b89, type: 3}
-    soundClip: {fileID: 0}
+    soundClip: {fileID: 8300000, guid: 35b6d827d1b3f9240b10f9aa092cf3b1, type: 3}
     timeOnScreen: 2
   - image: {fileID: 21300000, guid: bc46c5f4bbd0f9d4e847877ac29db041, type: 3}
     soundClip: {fileID: 0}
     timeOnScreen: 4
   - image: {fileID: 21300000, guid: bc5f5b39618dde646a2c1d4e60262699, type: 3}
     soundClip: {fileID: 0}
-    timeOnScreen: 1
+    timeOnScreen: 4
   levelToLoadWhenFinished: {fileID: 11400000, guid: b31ccbbe8b64d3646af2620a97247fec, type: 2}

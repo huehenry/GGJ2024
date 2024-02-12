@@ -54,7 +54,7 @@ public class CutsceneManager : MonoBehaviour
             }
 
             // Play the sound
-            if (screen.soundClip != null)
+            if (screen.soundClip != null && Camera.main!=null)
             {
                 AudioSource.PlayClipAtPoint(screen.soundClip, Camera.main.transform.position);
             }

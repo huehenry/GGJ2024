@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
   - {fileID: 11400000, guid: 8a630aa4e38a02a4e81398a00ae51ee4, type: 2}
   - {fileID: 11400000, guid: 78037e59a8c15ad4d8ec9c0b958e7cd9, type: 2}
+  levelName: LEVEL 11
   CardList:
   - {fileID: -950702387205982121, guid: f4fb6523f019ab447a8782fc43000bd3, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}

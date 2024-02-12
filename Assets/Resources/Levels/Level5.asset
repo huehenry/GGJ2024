@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3de13a7ccac74494bb7e59433389f897, type: 2}
   - {fileID: 11400000, guid: 43785a680b87bbe49a164972ff8f36a3, type: 2}
   - {fileID: 11400000, guid: 8a630aa4e38a02a4e81398a00ae51ee4, type: 2}
+  levelName: LEVEL 6
   CardList:
   - {fileID: 6806289824549375326, guid: d85f4361d3a3b9f448d74c0b14afb4d2, type: 3}
   - {fileID: 8825197289837057805, guid: 5ce63a4c5d8c7c14ca369a5740c23536, type: 3}
@@ -31,3 +32,4 @@ MonoBehaviour:
   backgroundSceneFilename: LevelGreyWallOfficeEscalator
   trapdoors: 01000100010000000100
   nextCutscene: {fileID: 11400000, guid: eccfa5bc730ad4343b80e4a237827bdb, type: 2}
+  finalLevel: 0
